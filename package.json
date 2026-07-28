@@ -1,0 +1,13 @@
+{
+  "name": "frog-review-cards",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "cards": "node scripts/make-cards.mjs",
+    "deploy": "wrangler pages deploy public"
+  },
+  "dependencies": {
+    "qrcode": "^1.5.4"
+  }
+}
