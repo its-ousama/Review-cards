@@ -5,35 +5,43 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Thanks for coming in — The Frog &amp; British Library</title>
 <meta name="robots" content="noindex">
-<meta name="theme-color" content="#0F2119">
+<meta name="theme-color" content="#1E4437">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Karla:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
+
+<picture class="bg">
+  <source type="image/webp" media="(min-width: 700px)" srcset="/img/bar-lg.webp">
+  <source type="image/webp" srcset="/img/bar-sm.webp">
+  <source media="(min-width: 700px)" srcset="/img/bar-lg.jpg">
+  <img src="/img/bar-sm.jpg" alt="" fetchpriority="high">
+</picture>
+
 <main class="card">
-  <p class="eyebrow">Tolbiac &middot; Paris 13e</p>
-  <hr class="rule">
-
-  <h1 class="title">Thanks for coming in.</h1>
-  <p class="subtitle">Hope the terrace treated you well.</p>
-
-  <button type="button" class="badge" id="badge" aria-describedby="hint">
-    <span class="badge__role" id="role">Served you today</span>
-    <span class="badge__name" id="name">Sam</span>
-  </button>
-  <p class="hint" id="hint" role="status">Tap the badge to copy the name</p>
-
-  <p class="note">
-    A review that names <strong class="note__name" id="name-inline">Sam</strong>
-    tells the pub who actually looked after you &mdash; and it lands where it should.
-  </p>
-
-  <button type="button" class="cta" id="go">Write a Google review</button>
-  <p class="foot">Good night or bad, both are worth writing.</p>
-
   <p class="venue">The Frog &amp; British Library</p>
+
+  <h1 class="title">Thanks for coming in</h1>
+  <p class="sub">Hope we looked after you.</p>
+
+  <div class="server">
+    <p class="server__label" id="role">Served you today</p>
+    <button type="button" class="chip" id="badge" aria-describedby="hint">
+      <span class="chip__name" id="name">Sam</span>
+      <svg class="chip__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="9" y="9" width="12" height="12" rx="2"/>
+        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+      </svg>
+    </button>
+    <p class="hint" id="hint" role="status">Tap to copy the name</p>
+  </div>
+
+  <button type="button" class="cta" id="go">Leave a review</button>
+
+  <p class="foot">Mentioning <strong id="name-inline">Sam</strong> helps it reach the right person.</p>
 </main>
 
 <script src="/js/config.js"></script>
