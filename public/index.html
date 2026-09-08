@@ -9,7 +9,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="/css/styles.css">
+<!-- ?v= is a cache buster. Bump it on every deploy that touches css or js:
+     a phone holding an old copy has no way to know it is stale, and a new
+     index.html against an old config.js is a blank page. -->
+<link rel="stylesheet" href="/css/styles.css?v=2">
 </head>
 <body>
 
@@ -50,7 +53,7 @@
   </section>
 
   <!-- where -->
-  <section class="step">
+  <section class="step" id="where">
     <p class="step__label"><span class="step__num">1</span> Where would you like to leave it?</p>
     <div class="seg" id="platforms" role="radiogroup" aria-label="Review site">
       <span class="seg__glider" id="glider" aria-hidden="true"></span>
@@ -82,7 +85,7 @@
 
 </main>
 
-<script src="/js/config.js"></script>
-<script src="/js/app.js"></script>
+<script src="/js/config.js?v=2"></script>
+<script src="/js/app.js?v=2"></script>
 </body>
 </html>

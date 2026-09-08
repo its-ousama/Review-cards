@@ -1,0 +1,20 @@
+# Cloudflare Pages cache rules.
+#
+# The whole reason this file exists: styles.css and app.js keep their names
+# from one deploy to the next, so without it a phone that scanned a card last
+# month happily serves itself the old pair — and a new index.html against an
+# old config.js is a blank page, not a degraded one.
+#
+# max-age=0 + must-revalidate doesn't mean "no cache". The browser keeps the
+# file and asks "still current?" on each visit; Pages answers 304 Not Modified
+# and sends no body. Costs one tiny round trip, never serves a stale mismatch.
+
+/*
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: no-referrer
+
+# Photos are content-addressed by eye — they change when you replace them,
+# which is roughly never. Let those sit.
+/img/*
+  Cache-Control: public, max-age=604800

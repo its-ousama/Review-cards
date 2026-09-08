@@ -8,6 +8,7 @@ public/
   css/styles.css         tokens at the top, components below
   js/config.js           review sites + staff roster — the only file you edit routinely
   js/app.js              slug resolution, platform switch, stars, clipboard, tracking, redirect
+  _headers               cache rules — see "Deploying an update"
 functions/api/
   scan.js                counts scans and tap-throughs
   stats.js               private endpoint to read the counts
@@ -58,6 +59,31 @@ Then in the Cloudflare dashboard:
 3. **Settings → Environment variables** → add `STATS_KEY` with a long random string
 
 Without the KV binding the page still works perfectly — counting just silently no-ops. That's deliberate: a broken counter must never break a customer's journey.
+
+## 2b. Deploying an update
+
+`styles.css` and `app.js` keep their names from one deploy to the next, so a
+phone that scanned a card last month will happily reuse the copies it already
+has. A new `index.html` against an old `config.js` isn't a degraded page — it's
+a blank one, because the old config has no `platforms` array to read.
+
+Two things stop that:
+
+- **`public/_headers`** tells Cloudflare Pages to make browsers revalidate
+  before reusing anything outside `/img/`. Cheap: the answer is almost always
+  `304 Not Modified` with no body.
+- **`?v=` on the css and js tags in `index.html`.** Bump it — `?v=2` to `?v=3` —
+  on any deploy that touches those files. A new URL cannot be stale, which is
+  the only thing that reaches a phone whose cache is already poisoned.
+
+`app.js` also refuses to die on a config it doesn't recognise: a missing or
+old `platforms` array falls back to the review URL sitting in the button's own
+markup, the switch hides itself rather than rendering empty, and the stars and
+the name still work. Worth keeping — the failure it prevents is invisible to
+you and total for the customer.
+
+If a page ever looks half-built on your phone, that's this, and the fix is the
+`?v=` bump, not the CSS.
 
 ## 3. Print the cards
 

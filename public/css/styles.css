@@ -409,7 +409,9 @@ body::after {                       /* darken so the card reads cleanly */
 .foot strong { color: var(--brand); font-weight: 700; }
 
 /* ---- small screens ----------------------------------------------------- */
-@media (max-height: 700px) {
+/* iPhone-with-browser-chrome territory: ~734px of usable height on a 15.
+   Trigger the compact pass well before things actually collide. */
+@media (max-height: 780px) {
   .card { padding: 24px 22px 20px; }
   .title { margin-top: 11px; }
   .server { margin: 18px 0 2px; padding: 11px 13px; }

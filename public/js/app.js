@@ -1,8 +1,6 @@
 (() => {
   "use strict";
 
-  const { platforms, defaultSlug, staff, handoffDelay } = window.CONFIG;
-
   const el = {
     server:  document.getElementById("server"),
     avatar:  document.getElementById("avatar"),
@@ -12,6 +10,7 @@
     inline:  document.getElementById("name-inline"),
     hint:    document.getElementById("hint"),
     badge:   document.getElementById("badge"),
+    where:   document.getElementById("where"),
     seg:     document.getElementById("platforms"),
     glider:  document.getElementById("glider"),
     stars:   document.getElementById("stars"),
@@ -20,45 +19,80 @@
     goText:  document.getElementById("cta-text")
   };
 
+  // ---- config, defensively ---------------------------------------------
+  //
+  // A phone can end up holding a new index.html and an old cached config.js.
+  // If that combination throws, the whole page goes dark — no name, no stars,
+  // no switch. So nothing below assumes the config is the one we shipped.
+  // The button in the markup already carries a working review URL, and that
+  // is what we fall back to.
+
+  const CONFIG = window.CONFIG || {};
+
+  const FALLBACK = {
+    id: "google",
+    label: "Google",
+    accent: "#4285F4",
+    url: el.go.getAttribute("href"),
+    androidPackage: "com.google.android.apps.maps"
+  };
+
+  const configured = Array.isArray(CONFIG.platforms)
+    ? CONFIG.platforms.filter((p) => p && typeof p.url === "string" && p.url)
+    : [];
+
+  const platforms   = configured.length ? configured : [FALLBACK];
+  const staff       = CONFIG.staff && typeof CONFIG.staff === "object" ? CONFIG.staff : {};
+  const defaultSlug = typeof CONFIG.defaultSlug === "string" ? CONFIG.defaultSlug : "";
+  const handoffDelay = Number.isFinite(CONFIG.handoffDelay) ? CONFIG.handoffDelay : 620;
+
   const STARS = 5;
   let platform = platforms[0];
   let rating = 0;
   let leaving = false;
 
   const slug = resolveSlug();
-  const person = slug ? staff[slug] : null;
 
-  // Unknown slug: no name shown at all. A wrong name misattributes the
-  // review; a missing one just loses the prompt.
-  if (person) {
-    showPerson(person);
-    el.badge.addEventListener("click", () => copyName(person.name));
-  }
+  // Order matters. The name is the part the customer came for, so it goes up
+  // before anything more elaborate gets a chance to fail.
+  attempt(showPerson);
+  attempt(buildPlatforms);
+  attempt(buildStars);
+  attempt(() => applyPlatform(platform, { silent: true }));
 
-  buildPlatforms();
-  buildStars();
-  applyPlatform(platform, { silent: true });
-
-  el.go.addEventListener("click", () => { if (!leaving) { leaving = true; track("click"); } });
+  el.go.addEventListener("click", () => {
+    if (!leaving) { leaving = true; track("click"); }
+  });
 
   track("scan");
 
+  // Each block stands on its own: one failing must not take the rest with it.
+  function attempt(fn) {
+    try { fn(); } catch (err) { console.error(err); }
+  }
+
   /* ---- who served you ------------------------------------------------ */
 
-  function showPerson({ name, role }) {
-    el.name.textContent = name;
-    el.inline.textContent = name;
-    el.role.textContent = role;
-    el.avatar.textContent = name.trim().charAt(0).toUpperCase();
+  function showPerson() {
+    // Unknown slug: no name shown at all. A wrong name misattributes the
+    // review; a missing one just loses the prompt.
+    const person = slug ? staff[slug] : null;
+    if (!person || !person.name) return;
+
+    el.name.textContent = person.name;
+    el.inline.textContent = person.name;
+    el.role.textContent = person.role || "Served you today";
+    el.avatar.textContent = person.name.trim().charAt(0).toUpperCase();
     el.server.hidden = false;
     el.foot.hidden = false;
+    el.badge.addEventListener("click", () => copyName(person.name));
   }
 
   function resolveSlug() {
     const raw = new URLSearchParams(window.location.search).get("s");
     const cleaned = (raw || defaultSlug).toLowerCase().trim();
     if (!/^[a-z0-9-]{1,24}$/.test(cleaned)) return null;
-    return Object.hasOwn(staff, cleaned) ? cleaned : null;
+    return Object.prototype.hasOwnProperty.call(staff, cleaned) ? cleaned : null;
   }
 
   async function copyName(name) {
@@ -74,6 +108,13 @@
   /* ---- where ---------------------------------------------------------- */
 
   function buildPlatforms() {
+    // One destination is not a choice. Don't make people look at a switch
+    // that can't switch.
+    if (platforms.length < 2) {
+      if (el.where) el.where.hidden = true;
+      return;
+    }
+
     platforms.forEach((p, i) => {
       const b = document.createElement("button");
       b.type = "button";
@@ -81,9 +122,10 @@
       b.dataset.id = p.id;
       b.setAttribute("role", "radio");
       b.setAttribute("aria-checked", String(i === 0));
-      b.style.setProperty("--accent", p.accent);
+      b.style.setProperty("--accent", p.accent || "#62716A");
       b.innerHTML =
-        `<span class="seg__dot" aria-hidden="true"></span><span>${p.label}</span>`;
+        `<span class="seg__dot" aria-hidden="true"></span><span></span>`;
+      b.lastElementChild.textContent = p.label || p.id;
       b.addEventListener("click", () => applyPlatform(p));
       el.seg.appendChild(b);
     });
@@ -91,6 +133,7 @@
 
   function applyPlatform(p, { silent = false } = {}) {
     platform = p;
+    const label = p.label || p.id;
 
     const opts = [...el.seg.querySelectorAll(".seg__opt")];
     opts.forEach((b) => {
@@ -101,20 +144,23 @@
     });
 
     // Slide the highlight behind the chosen option.
-    const idx = platforms.indexOf(p);
-    el.glider.style.setProperty("--n", String(platforms.length));
-    el.glider.style.setProperty("--i", String(idx));
-    el.glider.style.setProperty("--accent", p.accent);
+    if (opts.length) {
+      const idx = platforms.indexOf(p);
+      el.glider.hidden = false;
+      el.glider.style.setProperty("--n", String(platforms.length));
+      el.glider.style.setProperty("--i", String(idx));
+      el.glider.style.setProperty("--accent", p.accent || "#62716A");
+    } else if (el.glider) {
+      el.glider.hidden = true;
+    }
 
     // Keep the real link honest — it works with JS broken, and it's what a
     // long-press "open in new tab" will use.
     el.go.href = target(p);
-    el.goText.textContent = `Leave a review on ${p.label}`;
+    el.goText.textContent = `Leave a review on ${label}`;
 
     if (!silent) {
-      el.rhint.textContent = rating
-        ? `Opening ${p.label}…`
-        : `Tap a star — you'll finish on ${p.label}`;
+      el.rhint.textContent = rating ? `Opening ${label}…` : `Tap a star — you'll finish on ${label}`;
       if (rating) leave();
     }
   }
@@ -169,7 +215,7 @@
     });
 
     el.stars.classList.add("is-rated");
-    el.rhint.textContent = `Thanks — opening ${platform.label}…`;
+    el.rhint.textContent = `Thanks — opening ${platform.label || platform.id}…`;
     el.rhint.classList.add("is-live");
     leave();
   }
@@ -178,7 +224,8 @@
     leaving = true;
     el.go.classList.add("is-going");
     track("click");
-    setTimeout(() => { window.location.href = target(platform); }, handoffDelay);
+    const href = target(platform);
+    setTimeout(() => { window.location.href = href; }, handoffDelay);
   }
 
   /* ---- link building --------------------------------------------------- */
@@ -197,13 +244,15 @@
 
   // Fire and forget. Counting must never block or break the journey.
   function track(event) {
-    const q = new URLSearchParams({ s: slug || "unknown", e: event });
-    if (event === "click") {
-      q.set("p", platform.id);
-      if (rating) q.set("r", String(rating));
-    }
-    const url = `/api/scan?${q}`;
-    if (navigator.sendBeacon) { navigator.sendBeacon(url); return; }
-    fetch(url, { method: "POST", keepalive: true }).catch(() => {});
+    try {
+      const q = new URLSearchParams({ s: slug || "unknown", e: event });
+      if (event === "click") {
+        q.set("p", platform.id || "unknown");
+        if (rating) q.set("r", String(rating));
+      }
+      const url = `/api/scan?${q}`;
+      if (navigator.sendBeacon) { navigator.sendBeacon(url); return; }
+      fetch(url, { method: "POST", keepalive: true }).catch(() => {});
+    } catch { /* counting is never worth an error */ }
   }
 })();
