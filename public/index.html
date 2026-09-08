@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#1E4437">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
@@ -21,27 +21,65 @@
 </picture>
 
 <main class="card">
-  <p class="venue">The Frog &amp; British Library</p>
 
-  <h1 class="title">Thanks for coming in</h1>
-  <p class="sub">Hope we looked after you.</p>
+  <header class="head">
+    <p class="venue">
+      <span class="venue__rule" aria-hidden="true"></span>
+      The Frog &amp; British Library
+      <span class="venue__rule" aria-hidden="true"></span>
+    </p>
+    <h1 class="title">Thanks for<br>coming in</h1>
+    <p class="sub">Hope we looked after you.</p>
+  </header>
 
-  <div class="server">
-    <p class="server__label" id="role">Served you today</p>
-    <button type="button" class="chip" id="badge" aria-describedby="hint">
-      <span class="chip__name" id="name">Sam</span>
-      <svg class="chip__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-           stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <rect x="9" y="9" width="12" height="12" rx="2"/>
-        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
-      </svg>
-    </button>
-    <p class="hint" id="hint" role="status">Tap to copy the name</p>
-  </div>
+  <!-- who served you -->
+  <section class="server" id="server" hidden>
+    <div class="server__avatar" id="avatar" aria-hidden="true">S</div>
+    <div class="server__text">
+      <p class="server__label" id="role">Served you today</p>
+      <button type="button" class="chip" id="badge" aria-describedby="hint">
+        <span class="chip__name" id="name">Sam</span>
+        <svg class="chip__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="9" y="9" width="12" height="12" rx="2"/>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+        </svg>
+      </button>
+      <p class="hint" id="hint" role="status">Tap to copy the name</p>
+    </div>
+  </section>
 
-  <button type="button" class="cta" id="go">Leave a review</button>
+  <!-- where -->
+  <section class="step">
+    <p class="step__label"><span class="step__num">1</span> Where would you like to leave it?</p>
+    <div class="seg" id="platforms" role="radiogroup" aria-label="Review site">
+      <span class="seg__glider" id="glider" aria-hidden="true"></span>
+      <!-- buttons injected by app.js from config.js -->
+      <noscript><p class="seg__noscript">Use the button below to leave a review on Google.</p></noscript>
+    </div>
+  </section>
 
-  <p class="foot">Mentioning <strong id="name-inline">Sam</strong> helps it reach the right person.</p>
+  <!-- rate -->
+  <section class="step">
+    <p class="step__label"><span class="step__num">2</span> How was it?</p>
+    <div class="stars" id="stars" role="radiogroup" aria-label="Your rating">
+      <!-- buttons injected by app.js -->
+    </div>
+    <p class="stars__hint" id="rate-hint" role="status">Tap a star — you'll finish on the review page</p>
+  </section>
+
+  <!-- go -->
+  <a class="cta" id="go"
+     href="https://search.google.com/local/writereview?placeid=ChIJh2CBrzxy5kcRQiHJF_DvnKw">
+    <span id="cta-text">Leave a review on Google</span>
+    <svg class="cta__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+         stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M5 12h13M12 5l7 7-7 7"/>
+    </svg>
+  </a>
+
+  <p class="foot" id="foot" hidden>Mentioning <strong id="name-inline"></strong> helps it reach the right person.</p>
+
 </main>
 
 <script src="/js/config.js"></script>

@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sam — review cards</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Karla:wght@400;500;600&display=swap">
+<style>@page { size: A4; margin: 11mm 20mm; }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: #E8E6E0;
+  font-family: Karla, sans-serif;
+}
+
+.sheet {
+  width: 170mm;
+  height: 275mm;
+  margin: 0 auto 8mm;
+  background: #fff;
+  display: grid;
+  grid-template-columns: repeat(2, 85mm);
+  grid-template-rows: repeat(5, 55mm);
+  page-break-after: always;
+}
+
+.card {
+  border: .2mm dashed #C9C6BE;
+  padding: 6mm 6.5mm;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4mm;
+  background: #F7F5EF;
+  color: #0F2119;
+}
+
+.card__body {
+  display: flex;
+  flex-direction: column;
+}
+
+.card__role {
+  font-size: 6pt;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #9A7C33;
+}
+
+.card__name {
+  font-family: 'Libre Caslon Display', Georgia, serif;
+  font-size: 26pt;
+  line-height: 1.05;
+  margin: 1mm 0 2.5mm;
+}
+
+.card__ask {
+  font-size: 9.5pt;
+  line-height: 1.3;
+  max-width: 40mm;
+}
+
+.card__venue {
+  margin-top: auto;
+  padding-top: 3mm;
+  font-size: 6pt;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: #6E7A70;
+}
+
+.card__qr {
+  text-align: center;
+}
+
+.card__qr svg {
+  width: 22mm;
+  height: 22mm;
+  display: block;
+}
+
+.card__scan {
+  margin-top: 1.5mm;
+  font-size: 6pt;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #9A7C33;
+}
+
+@media print {
+  body { background: #fff; }
+  .sheet { margin: 0; box-shadow: none; }
+}
+</style>
+</head>
+<body>
+<section class="sheet"><div class="card">
+  <div class="card__body">
+    <p class="card__role">Served you today</p>
+    <p class="card__name">Sam</p>
+    <p class="card__ask">A minute for a review?</p>
+    <p class="card__venue">The Frog &amp; British Library</p>
+  </div>
+  <div class="card__qr">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" shape-rendering="crispEdges"><path stroke="#0F2119" d="M0 0.5h7m1 0h1m3 0h4m1 0h4m1 0h7M0 1.5h1m5 0h1m1 0h2m1 0h3m2 0h1m1 0h1m3 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m2 0h3m4 0h1m3 0h1m1 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h5m1 0h2m1 0h1m1 0h1m2 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m3 0h1m1 0h1m1 0h1m1 0h1m2 0h1m2 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m2 0h1m3 0h1m1 0h2m1 0h2m2 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M8 7.5h1m6 0h3m1 0h1M0 8.5h1m1 0h2m1 0h3m2 0h1m1 0h2m1 0h4m3 0h1m2 0h1m1 0h2M1 9.5h5m6 0h4m1 0h3m1 0h4m3 0h1M3 10.5h1m2 0h1m2 0h2m1 0h2m2 0h2m3 0h1m4 0h2M2 11.5h1m1 0h2m1 0h3m2 0h1m5 0h2m1 0h2m1 0h1m3 0h1M1 12.5h1m4 0h1m2 0h2m1 0h1m1 0h1m2 0h1m7 0h2M1 13.5h1m2 0h1m2 0h1m3 0h1m2 0h3m2 0h1m1 0h2m3 0h3M2 14.5h5m1 0h2m1 0h3m3 0h3m1 0h2m1 0h1m1 0h3M4 15.5h1m6 0h1m2 0h2m2 0h1m1 0h1m1 0h3m2 0h1M0 16.5h1m1 0h2m2 0h2m1 0h2m1 0h1m1 0h1m3 0h1m5 0h2m1 0h1M2 17.5h1m1 0h2m1 0h1m3 0h2m1 0h2m4 0h1m2 0h1m1 0h3M0 18.5h1m2 0h4m1 0h1m4 0h4m3 0h1m1 0h3m1 0h1M3 19.5h1m3 0h1m3 0h5m1 0h2m1 0h1m1 0h1m3 0h1M1 20.5h4m1 0h2m2 0h2m1 0h2m2 0h1m2 0h7M8 21.5h2m1 0h1m4 0h3m1 0h1m3 0h5M0 22.5h7m1 0h1m1 0h3m1 0h1m1 0h1m1 0h3m1 0h1m1 0h2m1 0h1M0 23.5h1m5 0h1m1 0h1m2 0h4m3 0h1m1 0h1m3 0h2M0 24.5h1m1 0h3m1 0h1m2 0h3m4 0h3m1 0h5m1 0h2M0 25.5h1m1 0h3m1 0h1m1 0h1m4 0h1m1 0h1m2 0h1m1 0h2m1 0h3m2 0h1M0 26.5h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h1m3 0h3m3 0h1m2 0h1m1 0h1M0 27.5h1m5 0h1m3 0h2m7 0h2m4 0h1m1 0h1M0 28.5h7m1 0h3m1 0h2m2 0h1m1 0h4m1 0h1m1 0h1m1 0h1"/></svg>
+    <p class="card__scan">Scan</p>
+  </div>
+</div>
+<div class="card">
+  <div class="card__body">
+    <p class="card__role">Served you today</p>
+    <p class="card__name">Sam</p>
+    <p class="card__ask">A minute for a review?</p>
+    <p class="card__venue">The Frog &amp; British Library</p>
+  </div>
+  <div class="card__qr">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" shape-rendering="crispEdges"><path stroke="#0F2119" d="M0 0.5h7m1 0h1m3 0h4m1 0h4m1 0h7M0 1.5h1m5 0h1m1 0h2m1 0h3m2 0h1m1 0h1m3 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m2 0h3m4 0h1m3 0h1m1 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h5m1 0h2m1 0h1m1 0h1m2 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m3 0h1m1 0h1m1 0h1m1 0h1m2 0h1m2 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m2 0h1m3 0h1m1 0h2m1 0h2m2 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M8 7.5h1m6 0h3m1 0h1M0 8.5h1m1 0h2m1 0h3m2 0h1m1 0h2m1 0h4m3 0h1m2 0h1m1 0h2M1 9.5h5m6 0h4m1 0h3m1 0h4m3 0h1M3 10.5h1m2 0h1m2 0h2m1 0h2m2 0h2m3 0h1m4 0h2M2 11.5h1m1 0h2m1 0h3m2 0h1m5 0h2m1 0h2m1 0h1m3 0h1M1 12.5h1m4 0h1m2 0h2m1 0h1m1 0h1m2 0h1m7 0h2M1 13.5h1m2 0h1m2 0h1m3 0h1m2 0h3m2 0h1m1 0h2m3 0h3M2 14.5h5m1 0h2m1 0h3m3 0h3m1 0h2m1 0h1m1 0h3M4 15.5h1m6 0h1m2 0h2m2 0h1m1 0h1m1 0h3m2 0h1M0 16.5h1m1 0h2m2 0h2m1 0h2m1 0h1m1 0h1m3 0h1m5 0h2m1 0h1M2 17.5h1m1 0h2m1 0h1m3 0h2m1 0h2m4 0h1m2 0h1m1 0h3M0 18.5h1m2 0h4m1 0h1m4 0h4m3 0h1m1 0h3m1 0h1M3 19.5h1m3 0h1m3 0h5m1 0h2m1 0h1m1 0h1m3 0h1M1 20.5h4m1 0h2m2 0h2m1 0h2m2 0h1m2 0h7M8 21.5h2m1 0h1m4 0h3m1 0h1m3 0h5M0 22.5h7m1 0h1m1 0h3m1 0h1m1 0h1m1 0h3m1 0h1m1 0h2m1 0h1M0 23.5h1m5 0h1m1 0h1m2 0h4m3 0h1m1 0h1m3 0h2M0 24.5h1m1 0h3m1 0h1m2 0h3m4 0h3m1 0h5m1 0h2M0 25.5h1m1 0h3m1 0h1m1 0h1m4 0h1m1 0h1m2 0h1m1 0h2m1 0h3m2 0h1M0 26.5h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h1m3 0h3m3 0h1m2 0h1m1 0h1M0 27.5h1m5 0h1m3 0h2m7 0h2m4 0h1m1 0h1M0 28.5h7m1 0h3m1 0h2m2 0h1m1 0h4m1 0h1m1 0h1m1 0h1"/></svg>
+    <p class="card__scan">Scan</p>
+  </div>
+</div>
+<div class="card">
+  <div class="card__body">
+    <p class="card__role">Served you today</p>
+    <p class="card__name">Sam</p>
+    <p class="card__ask">A minute for a review?</p>
+    <p class="card__venue">The Frog &amp; British Library</p>
+  </div>
+  <div class="card__qr">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" shape-rendering="crispEdges"><path stroke="#0F2119" d="M0 0.5h7m1 0h1m3 0h4m1 0h4m1 0h7M0 1.5h1m5 0h1m1 0h2m1 0h3m2 0h1m1 0h1m3 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m2 0h3m4 0h1m3 0h1m1 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h5m1 0h2m1 0h1m1 0h1m2 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m3 0h1m1 0h1m1 0h1m1 0h1m2 0h1m2 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m2 0h1m3 0h1m1 0h2m1 0h2m2 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M8 7.5h1m6 0h3m1 0h1M0 8.5h1m1 0h2m1 0h3m2 0h1m1 0h2m1 0h4m3 0h1m2 0h1m1 0h2M1 9.5h5m6 0h4m1 0h3m1 0h4m3 0h1M3 10.5h1m2 0h1m2 0h2m1 0h2m2 0h2m3 0h1m4 0h2M2 11.5h1m1 0h2m1 0h3m2 0h1m5 0h2m1 0h2m1 0h1m3 0h1M1 12.5h1m4 0h1m2 0h2m1 0h1m1 0h1m2 0h1m7 0h2M1 13.5h1m2 0h1m2 0h1m3 0h1m2 0h3m2 0h1m1 0h2m3 0h3M2 14.5h5m1 0h2m1 0h3m3 0h3m1 0h2m1 0h1m1 0h3M4 15.5h1m6 0h1m2 0h2m2 0h1m1 0h1m1 0h3m2 0h1M0 16.5h1m1 0h2m2 0h2m1 0h2m1 0h1m1 0h1m3 0h1m5 0h2m1 0h1M2 17.5h1m1 0h2m1 0h1m3 0h2m1 0h2m4 0h1m2 0h1m1 0h3M0 18.5h1m2 0h4m1 0h1m4 0h4m3 0h1m1 0h3m1 0h1M3 19.5h1m3 0h1m3 0h5m1 0h2m1 0h1m1 0h1m3 0h1M1 20.5h4m1 0h2m2 0h2m1 0h2m2 0h1m2 0h7M8 21.5h2m1 0h1m4 0h3m1 0h1m3 0h5M0 22.5h7m1 0h1m1 0h3m1 0h1m1 0h1m1 0h3m1 0h1m1 0h2m1 0h1M0 23.5h1m5 0h1m1 0h1m2 0h4m3 0h1m1 0h1m3 0h2M0 24.5h1m1 0h3m1 0h1m2 0h3m4 0h3m1 0h5m1 0h2M0 25.5h1m1 0h3m1 0h1m1 0h1m4 0h1m1 0h1m2 0h1m1 0h2m1 0h3m2 0h1M0 26.5h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h1m3 0h3m3 0h1m2 0h1m1 0h1M0 27.5h1m5 0h1m3 0h2m7 0h2m4 0h1m1 0h1M0 28.5h7m1 0h3m1 0h2m2 0h1m1 0h4m1 0h1m1 0h1m1 0h1"/></svg>
+    <p class="card__scan">Scan</p>
+  </div>
+</div>
+<div class="card">
+  <div class="card__body">
+    <p class="card__role">Served you today</p>
+    <p class="card__name">Sam</p>
+    <p class="card__ask">A minute for a review?</p>
+    <p class="card__venue">The Frog &amp; British Library</p>
+  </div>
+  <div class="card__qr">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" shape-rendering="crispEdges"><path stroke="#0F2119" d="M0 0.5h7m1 0h1m3 0h4m1 0h4m1 0h7M0 1.5h1m5 0h1m1 0h2m1 0h3m2 0h1m1 0h1m3 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m2 0h3m4 0h1m3 0h1m1 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h5m1 0h2m1 0h1m1 0h1m2 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m3 0h1m1 0h1m1 0h1m1 0h1m2 0h1m2 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m2 0h1m3 0h1m1 0h2m1 0h2m2 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M8 7.5h1m6 0h3m1 0h1M0 8.5h1m1 0h2m1 0h3m2 0h1m1 0h2m1 0h4m3 0h1m2 0h1m1 0h2M1 9.5h5m6 0h4m1 0h3m1 0h4m3 0h1M3 10.5h1m2 0h1m2 0h2m1 0h2m2 0h2m3 0h1m4 0h2M2 11.5h1m1 0h2m1 0h3m2 0h1m5 0h2m1 0h2m1 0h1m3 0h1M1 12.5h1m4 0h1m2 0h2m1 0h1m1 0h1m2 0h1m7 0h2M1 13.5h1m2 0h1m2 0h1m3 0h1m2 0h3m2 0h1m1 0h2m3 0h3M2 14.5h5m1 0h2m1 0h3m3 0h3m1 0h2m1 0h1m1 0h3M4 15.5h1m6 0h1m2 0h2m2 0h1m1 0h1m1 0h3m2 0h1M0 16.5h1m1 0h2m2 0h2m1 0h2m1 0h1m1 0h1m3 0h1m5 0h2m1 0h1M2 17.5h1m1 0h2m1 0h1m3 0h2m1 0h2m4 0h1m2 0h1m1 0h3M0 18.5h1m2 0h4m1 0h1m4 0h4m3 0h1m1 0h3m1 0h1M3 19.5h1m3 0h1m3 0h5m1 0h2m1 0h1m1 0h1m3 0h1M1 20.5h4m1 0h2m2 0h2m1 0h2m2 0h1m2 0h7M8 21.5h2m1 0h1m4 0h3m1 0h1m3 0h5M0 22.5h7m1 0h1m1 0h3m1 0h1m1 0h1m1 0h3m1 0h1m1 0h2m1 0h1M0 23.5h1m5 0h1m1 0h1m2 0h4m3 0h1m1 0h1m3 0h2M0 24.5h1m1 0h3m1 0h1m2 0h3m4 0h3m1 0h5m1 0h2M0 25.5h1m1 0h3m1 0h1m1 0h1m4 0h1m1 0h1m2 0h1m1 0h2m1 0h3m2 0h1M0 26.5h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h1m3 0h3m3 0h1m2 0h1m1 0h1M0 27.5h1m5 0h1m3 0h2m7 0h2m4 0h1m1 0h1M0 28.5h7m1 0h3m1 0h2m2 0h1m1 0h4m1 0h1m1 0h1m1 0h1"/></svg>
+    <p class="card__scan">Scan</p>
+  </div>
+</div>
+<div class="card">
+  <div class="card__body">
+    <p class="card__role">Served you today</p>
+    <p class="card__name">Sam</p>
+    <p class="card__ask">A minute for a review?</p>
+    <p class="card__venue">The Frog &amp; British Library</p>
+  </div>
+  <div class="card__qr">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" shape-rendering="crispEdges"><path stroke="#0F2119" d="M0 0.5h7m1 0h1m3 0h4m1 0h4m1 0h7M0 1.5h1m5 0h1m1 0h2m1 0h3m2 0h1m1 0h1m3 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m2 0h3m4 0h1m3 0h1m1 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h5m1 0h2m1 0h1m1 0h1m2 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m3 0h1m1 0h1m1 0h1m1 0h1m2 0h1m2 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m2 0h1m3 0h1m1 0h2m1 0h2m2 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M8 7.5h1m6 0h3m1 0h1M0 8.5h1m1 0h2m1 0h3m2 0h1m1 0h2m1 0h4m3 0h1m2 0h1m1 0h2M1 9.5h5m6 0h4m1 0h3m1 0h4m3 0h1M3 10.5h1m2 0h1m2 0h2m1 0h2m2 0h2m3 0h1m4 0h2M2 11.5h1m1 0h2m1 0h3m2 0h1m5 0h2m1 0h2m1 0h1m3 0h1M1 12.5h1m4 0h1m2 0h2m1 0h1m1 0h1m2 0h1m7 0h2M1 13.5h1m2 0h1m2 0h1m3 0h1m2 0h3m2 0h1m1 0h2m3 0h3M2 14.5h5m1 0h2m1 0h3m3 0h3m1 0h2m1 0h1m1 0h3M4 15.5h1m6 0h1m2 0h2m2 0h1m1 0h1m1 0h3m2 0h1M0 16.5h1m1 0h2m2 0h2m1 0h2m1 0h1m1 0h1m3 0h1m5 0h2m1 0h1M2 17.5h1m1 0h2m1 0h1m3 0h2m1 0h2m4 0h1m2 0h1m1 0h3M0 18.5h1m2 0h4m1 0h1m4 0h4m3 0h1m1 0h3m1 0h1M3 19.5h1m3 0h1m3 0h5m1 0h2m1 0h1m1 0h1m3 0h1M1 20.5h4m1 0h2m2 0h2m1 0h2m2 0h1m2 0h7M8 21.5h2m1 0h1m4 0h3m1 0h1m3 0h5M0 22.5h7m1 0h1m1 0h3m1 0h1m1 0h1m1 0h3m1 0h1m1 0h2m1 0h1M0 23.5h1m5 0h1m1 0h1m2 0h4m3 0h1m1 0h1m3 0h2M0 24.5h1m1 0h3m1 0h1m2 0h3m4 0h3m1 0h5m1 0h2M0 25.5h1m1 0h3m1 0h1m1 0h1m4 0h1m1 0h1m2 0h1m1 0h2m1 0h3m2 0h1M0 26.5h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h1m3 0h3m3 0h1m2 0h1m1 0h1M0 27.5h1m5 0h1m3 0h2m7 0h2m4 0h1m1 0h1M0 28.5h7m1 0h3m1 0h2m2 0h1m1 0h4m1 0h1m1 0h1m1 0h1"/></svg>
+    <p class="card__scan">Scan</p>
+  </div>
+</div>
+<div class="card">
+  <div class="card__body">
+    <p class="card__role">Served you today</p>
+    <p class="card__name">Sam</p>
+    <p class="card__ask">A minute for a review?</p>
+    <p class="card__venue">The Frog &amp; British Library</p>
+  </div>
+  <div class="card__qr">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" shape-rendering="crispEdges"><path stroke="#0F2119" d="M0 0.5h7m1 0h1m3 0h4m1 0h4m1 0h7M0 1.5h1m5 0h1m1 0h2m1 0h3m2 0h1m1 0h1m3 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m2 0h3m4 0h1m3 0h1m1 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h5m1 0h2m1 0h1m1 0h1m2 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m3 0h1m1 0h1m1 0h1m1 0h1m2 0h1m2 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m2 0h1m3 0h1m1 0h2m1 0h2m2 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M8 7.5h1m6 0h3m1 0h1M0 8.5h1m1 0h2m1 0h3m2 0h1m1 0h2m1 0h4m3 0h1m2 0h1m1 0h2M1 9.5h5m6 0h4m1 0h3m1 0h4m3 0h1M3 10.5h1m2 0h1m2 0h2m1 0h2m2 0h2m3 0h1m4 0h2M2 11.5h1m1 0h2m1 0h3m2 0h1m5 0h2m1 0h2m1 0h1m3 0h1M1 12.5h1m4 0h1m2 0h2m1 0h1m1 0h1m2 0h1m7 0h2M1 13.5h1m2 0h1m2 0h1m3 0h1m2 0h3m2 0h1m1 0h2m3 0h3M2 14.5h5m1 0h2m1 0h3m3 0h3m1 0h2m1 0h1m1 0h3M4 15.5h1m6 0h1m2 0h2m2 0h1m1 0h1m1 0h3m2 0h1M0 16.5h1m1 0h2m2 0h2m1 0h2m1 0h1m1 0h1m3 0h1m5 0h2m1 0h1M2 17.5h1m1 0h2m1 0h1m3 0h2m1 0h2m4 0h1m2 0h1m1 0h3M0 18.5h1m2 0h4m1 0h1m4 0h4m3 0h1m1 0h3m1 0h1M3 19.5h1m3 0h1m3 0h5m1 0h2m1 0h1m1 0h1m3 0h1M1 20.5h4m1 0h2m2 0h2m1 0h2m2 0h1m2 0h7M8 21.5h2m1 0h1m4 0h3m1 0h1m3 0h5M0 22.5h7m1 0h1m1 0h3m1 0h1m1 0h1m1 0h3m1 0h1m1 0h2m1 0h1M0 23.5h1m5 0h1m1 0h1m2 0h4m3 0h1m1 0h1m3 0h2M0 24.5h1m1 0h3m1 0h1m2 0h3m4 0h3m1 0h5m1 0h2M0 25.5h1m1 0h3m1 0h1m1 0h1m4 0h1m1 0h1m2 0h1m1 0h2m1 0h3m2 0h1M0 26.5h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h1m3 0h3m3 0h1m2 0h1m1 0h1M0 27.5h1m5 0h1m3 0h2m7 0h2m4 0h1m1 0h1M0 28.5h7m1 0h3m1 0h2m2 0h1m1 0h4m1 0h1m1 0h1m1 0h1"/></svg>
+    <p class="card__scan">Scan</p>
+  </div>
+</div>
+<div class="card">
+  <div class="card__body">
+    <p class="card__role">Served you today</p>
+    <p class="card__name">Sam</p>
+    <p class="card__ask">A minute for a review?</p>
+    <p class="card__venue">The Frog &amp; British Library</p>
+  </div>
+  <div class="card__qr">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" shape-rendering="crispEdges"><path stroke="#0F2119" d="M0 0.5h7m1 0h1m3 0h4m1 0h4m1 0h7M0 1.5h1m5 0h1m1 0h2m1 0h3m2 0h1m1 0h1m3 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m2 0h3m4 0h1m3 0h1m1 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h5m1 0h2m1 0h1m1 0h1m2 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m3 0h1m1 0h1m1 0h1m1 0h1m2 0h1m2 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m2 0h1m3 0h1m1 0h2m1 0h2m2 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M8 7.5h1m6 0h3m1 0h1M0 8.5h1m1 0h2m1 0h3m2 0h1m1 0h2m1 0h4m3 0h1m2 0h1m1 0h2M1 9.5h5m6 0h4m1 0h3m1 0h4m3 0h1M3 10.5h1m2 0h1m2 0h2m1 0h2m2 0h2m3 0h1m4 0h2M2 11.5h1m1 0h2m1 0h3m2 0h1m5 0h2m1 0h2m1 0h1m3 0h1M1 12.5h1m4 0h1m2 0h2m1 0h1m1 0h1m2 0h1m7 0h2M1 13.5h1m2 0h1m2 0h1m3 0h1m2 0h3m2 0h1m1 0h2m3 0h3M2 14.5h5m1 0h2m1 0h3m3 0h3m1 0h2m1 0h1m1 0h3M4 15.5h1m6 0h1m2 0h2m2 0h1m1 0h1m1 0h3m2 0h1M0 16.5h1m1 0h2m2 0h2m1 0h2m1 0h1m1 0h1m3 0h1m5 0h2m1 0h1M2 17.5h1m1 0h2m1 0h1m3 0h2m1 0h2m4 0h1m2 0h1m1 0h3M0 18.5h1m2 0h4m1 0h1m4 0h4m3 0h1m1 0h3m1 0h1M3 19.5h1m3 0h1m3 0h5m1 0h2m1 0h1m1 0h1m3 0h1M1 20.5h4m1 0h2m2 0h2m1 0h2m2 0h1m2 0h7M8 21.5h2m1 0h1m4 0h3m1 0h1m3 0h5M0 22.5h7m1 0h1m1 0h3m1 0h1m1 0h1m1 0h3m1 0h1m1 0h2m1 0h1M0 23.5h1m5 0h1m1 0h1m2 0h4m3 0h1m1 0h1m3 0h2M0 24.5h1m1 0h3m1 0h1m2 0h3m4 0h3m1 0h5m1 0h2M0 25.5h1m1 0h3m1 0h1m1 0h1m4 0h1m1 0h1m2 0h1m1 0h2m1 0h3m2 0h1M0 26.5h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h1m3 0h3m3 0h1m2 0h1m1 0h1M0 27.5h1m5 0h1m3 0h2m7 0h2m4 0h1m1 0h1M0 28.5h7m1 0h3m1 0h2m2 0h1m1 0h4m1 0h1m1 0h1m1 0h1"/></svg>
+    <p class="card__scan">Scan</p>
+  </div>
+</div>
+<div class="card">
+  <div class="card__body">
+    <p class="card__role">Served you today</p>
+    <p class="card__name">Sam</p>
+    <p class="card__ask">A minute for a review?</p>
+    <p class="card__venue">The Frog &amp; British Library</p>
+  </div>
+  <div class="card__qr">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" shape-rendering="crispEdges"><path stroke="#0F2119" d="M0 0.5h7m1 0h1m3 0h4m1 0h4m1 0h7M0 1.5h1m5 0h1m1 0h2m1 0h3m2 0h1m1 0h1m3 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m2 0h3m4 0h1m3 0h1m1 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h5m1 0h2m1 0h1m1 0h1m2 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m3 0h1m1 0h1m1 0h1m1 0h1m2 0h1m2 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m2 0h1m3 0h1m1 0h2m1 0h2m2 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M8 7.5h1m6 0h3m1 0h1M0 8.5h1m1 0h2m1 0h3m2 0h1m1 0h2m1 0h4m3 0h1m2 0h1m1 0h2M1 9.5h5m6 0h4m1 0h3m1 0h4m3 0h1M3 10.5h1m2 0h1m2 0h2m1 0h2m2 0h2m3 0h1m4 0h2M2 11.5h1m1 0h2m1 0h3m2 0h1m5 0h2m1 0h2m1 0h1m3 0h1M1 12.5h1m4 0h1m2 0h2m1 0h1m1 0h1m2 0h1m7 0h2M1 13.5h1m2 0h1m2 0h1m3 0h1m2 0h3m2 0h1m1 0h2m3 0h3M2 14.5h5m1 0h2m1 0h3m3 0h3m1 0h2m1 0h1m1 0h3M4 15.5h1m6 0h1m2 0h2m2 0h1m1 0h1m1 0h3m2 0h1M0 16.5h1m1 0h2m2 0h2m1 0h2m1 0h1m1 0h1m3 0h1m5 0h2m1 0h1M2 17.5h1m1 0h2m1 0h1m3 0h2m1 0h2m4 0h1m2 0h1m1 0h3M0 18.5h1m2 0h4m1 0h1m4 0h4m3 0h1m1 0h3m1 0h1M3 19.5h1m3 0h1m3 0h5m1 0h2m1 0h1m1 0h1m3 0h1M1 20.5h4m1 0h2m2 0h2m1 0h2m2 0h1m2 0h7M8 21.5h2m1 0h1m4 0h3m1 0h1m3 0h5M0 22.5h7m1 0h1m1 0h3m1 0h1m1 0h1m1 0h3m1 0h1m1 0h2m1 0h1M0 23.5h1m5 0h1m1 0h1m2 0h4m3 0h1m1 0h1m3 0h2M0 24.5h1m1 0h3m1 0h1m2 0h3m4 0h3m1 0h5m1 0h2M0 25.5h1m1 0h3m1 0h1m1 0h1m4 0h1m1 0h1m2 0h1m1 0h2m1 0h3m2 0h1M0 26.5h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h1m3 0h3m3 0h1m2 0h1m1 0h1M0 27.5h1m5 0h1m3 0h2m7 0h2m4 0h1m1 0h1M0 28.5h7m1 0h3m1 0h2m2 0h1m1 0h4m1 0h1m1 0h1m1 0h1"/></svg>
+    <p class="card__scan">Scan</p>
+  </div>
+</div>
+<div class="card">
+  <div class="card__body">
+    <p class="card__role">Served you today</p>
+    <p class="card__name">Sam</p>
+    <p class="card__ask">A minute for a review?</p>
+    <p class="card__venue">The Frog &amp; British Library</p>
+  </div>
+  <div class="card__qr">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" shape-rendering="crispEdges"><path stroke="#0F2119" d="M0 0.5h7m1 0h1m3 0h4m1 0h4m1 0h7M0 1.5h1m5 0h1m1 0h2m1 0h3m2 0h1m1 0h1m3 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m2 0h3m4 0h1m3 0h1m1 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h5m1 0h2m1 0h1m1 0h1m2 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m3 0h1m1 0h1m1 0h1m1 0h1m2 0h1m2 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m2 0h1m3 0h1m1 0h2m1 0h2m2 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M8 7.5h1m6 0h3m1 0h1M0 8.5h1m1 0h2m1 0h3m2 0h1m1 0h2m1 0h4m3 0h1m2 0h1m1 0h2M1 9.5h5m6 0h4m1 0h3m1 0h4m3 0h1M3 10.5h1m2 0h1m2 0h2m1 0h2m2 0h2m3 0h1m4 0h2M2 11.5h1m1 0h2m1 0h3m2 0h1m5 0h2m1 0h2m1 0h1m3 0h1M1 12.5h1m4 0h1m2 0h2m1 0h1m1 0h1m2 0h1m7 0h2M1 13.5h1m2 0h1m2 0h1m3 0h1m2 0h3m2 0h1m1 0h2m3 0h3M2 14.5h5m1 0h2m1 0h3m3 0h3m1 0h2m1 0h1m1 0h3M4 15.5h1m6 0h1m2 0h2m2 0h1m1 0h1m1 0h3m2 0h1M0 16.5h1m1 0h2m2 0h2m1 0h2m1 0h1m1 0h1m3 0h1m5 0h2m1 0h1M2 17.5h1m1 0h2m1 0h1m3 0h2m1 0h2m4 0h1m2 0h1m1 0h3M0 18.5h1m2 0h4m1 0h1m4 0h4m3 0h1m1 0h3m1 0h1M3 19.5h1m3 0h1m3 0h5m1 0h2m1 0h1m1 0h1m3 0h1M1 20.5h4m1 0h2m2 0h2m1 0h2m2 0h1m2 0h7M8 21.5h2m1 0h1m4 0h3m1 0h1m3 0h5M0 22.5h7m1 0h1m1 0h3m1 0h1m1 0h1m1 0h3m1 0h1m1 0h2m1 0h1M0 23.5h1m5 0h1m1 0h1m2 0h4m3 0h1m1 0h1m3 0h2M0 24.5h1m1 0h3m1 0h1m2 0h3m4 0h3m1 0h5m1 0h2M0 25.5h1m1 0h3m1 0h1m1 0h1m4 0h1m1 0h1m2 0h1m1 0h2m1 0h3m2 0h1M0 26.5h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h1m3 0h3m3 0h1m2 0h1m1 0h1M0 27.5h1m5 0h1m3 0h2m7 0h2m4 0h1m1 0h1M0 28.5h7m1 0h3m1 0h2m2 0h1m1 0h4m1 0h1m1 0h1m1 0h1"/></svg>
+    <p class="card__scan">Scan</p>
+  </div>
+</div>
+<div class="card">
+  <div class="card__body">
+    <p class="card__role">Served you today</p>
+    <p class="card__name">Sam</p>
+    <p class="card__ask">A minute for a review?</p>
+    <p class="card__venue">The Frog &amp; British Library</p>
+  </div>
+  <div class="card__qr">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" shape-rendering="crispEdges"><path stroke="#0F2119" d="M0 0.5h7m1 0h1m3 0h4m1 0h4m1 0h7M0 1.5h1m5 0h1m1 0h2m1 0h3m2 0h1m1 0h1m3 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m2 0h3m4 0h1m3 0h1m1 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h5m1 0h2m1 0h1m1 0h1m2 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m3 0h1m1 0h1m1 0h1m1 0h1m2 0h1m2 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m2 0h1m3 0h1m1 0h2m1 0h2m2 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M8 7.5h1m6 0h3m1 0h1M0 8.5h1m1 0h2m1 0h3m2 0h1m1 0h2m1 0h4m3 0h1m2 0h1m1 0h2M1 9.5h5m6 0h4m1 0h3m1 0h4m3 0h1M3 10.5h1m2 0h1m2 0h2m1 0h2m2 0h2m3 0h1m4 0h2M2 11.5h1m1 0h2m1 0h3m2 0h1m5 0h2m1 0h2m1 0h1m3 0h1M1 12.5h1m4 0h1m2 0h2m1 0h1m1 0h1m2 0h1m7 0h2M1 13.5h1m2 0h1m2 0h1m3 0h1m2 0h3m2 0h1m1 0h2m3 0h3M2 14.5h5m1 0h2m1 0h3m3 0h3m1 0h2m1 0h1m1 0h3M4 15.5h1m6 0h1m2 0h2m2 0h1m1 0h1m1 0h3m2 0h1M0 16.5h1m1 0h2m2 0h2m1 0h2m1 0h1m1 0h1m3 0h1m5 0h2m1 0h1M2 17.5h1m1 0h2m1 0h1m3 0h2m1 0h2m4 0h1m2 0h1m1 0h3M0 18.5h1m2 0h4m1 0h1m4 0h4m3 0h1m1 0h3m1 0h1M3 19.5h1m3 0h1m3 0h5m1 0h2m1 0h1m1 0h1m3 0h1M1 20.5h4m1 0h2m2 0h2m1 0h2m2 0h1m2 0h7M8 21.5h2m1 0h1m4 0h3m1 0h1m3 0h5M0 22.5h7m1 0h1m1 0h3m1 0h1m1 0h1m1 0h3m1 0h1m1 0h2m1 0h1M0 23.5h1m5 0h1m1 0h1m2 0h4m3 0h1m1 0h1m3 0h2M0 24.5h1m1 0h3m1 0h1m2 0h3m4 0h3m1 0h5m1 0h2M0 25.5h1m1 0h3m1 0h1m1 0h1m4 0h1m1 0h1m2 0h1m1 0h2m1 0h3m2 0h1M0 26.5h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h1m3 0h3m3 0h1m2 0h1m1 0h1M0 27.5h1m5 0h1m3 0h2m7 0h2m4 0h1m1 0h1M0 28.5h7m1 0h3m1 0h2m2 0h1m1 0h4m1 0h1m1 0h1m1 0h1"/></svg>
+    <p class="card__scan">Scan</p>
+  </div>
+</div>
+</section>
+<section class="sheet"><div class="card">
+  <div class="card__body">
+    <p class="card__role">Served you today</p>
+    <p class="card__name">Sam</p>
+    <p class="card__ask">A minute for a review?</p>
+    <p class="card__venue">The Frog &amp; British Library</p>
+  </div>
+  <div class="card__qr">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" shape-rendering="crispEdges"><path stroke="#0F2119" d="M0 0.5h7m1 0h1m3 0h4m1 0h4m1 0h7M0 1.5h1m5 0h1m1 0h2m1 0h3m2 0h1m1 0h1m3 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m2 0h3m4 0h1m3 0h1m1 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h5m1 0h2m1 0h1m1 0h1m2 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m3 0h1m1 0h1m1 0h1m1 0h1m2 0h1m2 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m2 0h1m3 0h1m1 0h2m1 0h2m2 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M8 7.5h1m6 0h3m1 0h1M0 8.5h1m1 0h2m1 0h3m2 0h1m1 0h2m1 0h4m3 0h1m2 0h1m1 0h2M1 9.5h5m6 0h4m1 0h3m1 0h4m3 0h1M3 10.5h1m2 0h1m2 0h2m1 0h2m2 0h2m3 0h1m4 0h2M2 11.5h1m1 0h2m1 0h3m2 0h1m5 0h2m1 0h2m1 0h1m3 0h1M1 12.5h1m4 0h1m2 0h2m1 0h1m1 0h1m2 0h1m7 0h2M1 13.5h1m2 0h1m2 0h1m3 0h1m2 0h3m2 0h1m1 0h2m3 0h3M2 14.5h5m1 0h2m1 0h3m3 0h3m1 0h2m1 0h1m1 0h3M4 15.5h1m6 0h1m2 0h2m2 0h1m1 0h1m1 0h3m2 0h1M0 16.5h1m1 0h2m2 0h2m1 0h2m1 0h1m1 0h1m3 0h1m5 0h2m1 0h1M2 17.5h1m1 0h2m1 0h1m3 0h2m1 0h2m4 0h1m2 0h1m1 0h3M0 18.5h1m2 0h4m1 0h1m4 0h4m3 0h1m1 0h3m1 0h1M3 19.5h1m3 0h1m3 0h5m1 0h2m1 0h1m1 0h1m3 0h1M1 20.5h4m1 0h2m2 0h2m1 0h2m2 0h1m2 0h7M8 21.5h2m1 0h1m4 0h3m1 0h1m3 0h5M0 22.5h7m1 0h1m1 0h3m1 0h1m1 0h1m1 0h3m1 0h1m1 0h2m1 0h1M0 23.5h1m5 0h1m1 0h1m2 0h4m3 0h1m1 0h1m3 0h2M0 24.5h1m1 0h3m1 0h1m2 0h3m4 0h3m1 0h5m1 0h2M0 25.5h1m1 0h3m1 0h1m1 0h1m4 0h1m1 0h1m2 0h1m1 0h2m1 0h3m2 0h1M0 26.5h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h1m3 0h3m3 0h1m2 0h1m1 0h1M0 27.5h1m5 0h1m3 0h2m7 0h2m4 0h1m1 0h1M0 28.5h7m1 0h3m1 0h2m2 0h1m1 0h4m1 0h1m1 0h1m1 0h1"/></svg>
+    <p class="card__scan">Scan</p>
+  </div>
+</div>
+<div class="card">
+  <div class="card__body">
+    <p class="card__role">Served you today</p>
+    <p class="card__name">Sam</p>
+    <p class="card__ask">A minute for a review?</p>
+    <p class="card__venue">The Frog &amp; British Library</p>
+  </div>
+  <div class="card__qr">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" shape-rendering="crispEdges"><path stroke="#0F2119" d="M0 0.5h7m1 0h1m3 0h4m1 0h4m1 0h7M0 1.5h1m5 0h1m1 0h2m1 0h3m2 0h1m1 0h1m3 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m2 0h3m4 0h1m3 0h1m1 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h5m1 0h2m1 0h1m1 0h1m2 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m3 0h1m1 0h1m1 0h1m1 0h1m2 0h1m2 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m2 0h1m3 0h1m1 0h2m1 0h2m2 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M8 7.5h1m6 0h3m1 0h1M0 8.5h1m1 0h2m1 0h3m2 0h1m1 0h2m1 0h4m3 0h1m2 0h1m1 0h2M1 9.5h5m6 0h4m1 0h3m1 0h4m3 0h1M3 10.5h1m2 0h1m2 0h2m1 0h2m2 0h2m3 0h1m4 0h2M2 11.5h1m1 0h2m1 0h3m2 0h1m5 0h2m1 0h2m1 0h1m3 0h1M1 12.5h1m4 0h1m2 0h2m1 0h1m1 0h1m2 0h1m7 0h2M1 13.5h1m2 0h1m2 0h1m3 0h1m2 0h3m2 0h1m1 0h2m3 0h3M2 14.5h5m1 0h2m1 0h3m3 0h3m1 0h2m1 0h1m1 0h3M4 15.5h1m6 0h1m2 0h2m2 0h1m1 0h1m1 0h3m2 0h1M0 16.5h1m1 0h2m2 0h2m1 0h2m1 0h1m1 0h1m3 0h1m5 0h2m1 0h1M2 17.5h1m1 0h2m1 0h1m3 0h2m1 0h2m4 0h1m2 0h1m1 0h3M0 18.5h1m2 0h4m1 0h1m4 0h4m3 0h1m1 0h3m1 0h1M3 19.5h1m3 0h1m3 0h5m1 0h2m1 0h1m1 0h1m3 0h1M1 20.5h4m1 0h2m2 0h2m1 0h2m2 0h1m2 0h7M8 21.5h2m1 0h1m4 0h3m1 0h1m3 0h5M0 22.5h7m1 0h1m1 0h3m1 0h1m1 0h1m1 0h3m1 0h1m1 0h2m1 0h1M0 23.5h1m5 0h1m1 0h1m2 0h4m3 0h1m1 0h1m3 0h2M0 24.5h1m1 0h3m1 0h1m2 0h3m4 0h3m1 0h5m1 0h2M0 25.5h1m1 0h3m1 0h1m1 0h1m4 0h1m1 0h1m2 0h1m1 0h2m1 0h3m2 0h1M0 26.5h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h1m3 0h3m3 0h1m2 0h1m1 0h1M0 27.5h1m5 0h1m3 0h2m7 0h2m4 0h1m1 0h1M0 28.5h7m1 0h3m1 0h2m2 0h1m1 0h4m1 0h1m1 0h1m1 0h1"/></svg>
+    <p class="card__scan">Scan</p>
+  </div>
+</div>
+<div class="card">
+  <div class="card__body">
+    <p class="card__role">Served you today</p>
+    <p class="card__name">Sam</p>
+    <p class="card__ask">A minute for a review?</p>
+    <p class="card__venue">The Frog &amp; British Library</p>
+  </div>
+  <div class="card__qr">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" shape-rendering="crispEdges"><path stroke="#0F2119" d="M0 0.5h7m1 0h1m3 0h4m1 0h4m1 0h7M0 1.5h1m5 0h1m1 0h2m1 0h3m2 0h1m1 0h1m3 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m2 0h3m4 0h1m3 0h1m1 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h5m1 0h2m1 0h1m1 0h1m2 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m3 0h1m1 0h1m1 0h1m1 0h1m2 0h1m2 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m2 0h1m3 0h1m1 0h2m1 0h2m2 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M8 7.5h1m6 0h3m1 0h1M0 8.5h1m1 0h2m1 0h3m2 0h1m1 0h2m1 0h4m3 0h1m2 0h1m1 0h2M1 9.5h5m6 0h4m1 0h3m1 0h4m3 0h1M3 10.5h1m2 0h1m2 0h2m1 0h2m2 0h2m3 0h1m4 0h2M2 11.5h1m1 0h2m1 0h3m2 0h1m5 0h2m1 0h2m1 0h1m3 0h1M1 12.5h1m4 0h1m2 0h2m1 0h1m1 0h1m2 0h1m7 0h2M1 13.5h1m2 0h1m2 0h1m3 0h1m2 0h3m2 0h1m1 0h2m3 0h3M2 14.5h5m1 0h2m1 0h3m3 0h3m1 0h2m1 0h1m1 0h3M4 15.5h1m6 0h1m2 0h2m2 0h1m1 0h1m1 0h3m2 0h1M0 16.5h1m1 0h2m2 0h2m1 0h2m1 0h1m1 0h1m3 0h1m5 0h2m1 0h1M2 17.5h1m1 0h2m1 0h1m3 0h2m1 0h2m4 0h1m2 0h1m1 0h3M0 18.5h1m2 0h4m1 0h1m4 0h4m3 0h1m1 0h3m1 0h1M3 19.5h1m3 0h1m3 0h5m1 0h2m1 0h1m1 0h1m3 0h1M1 20.5h4m1 0h2m2 0h2m1 0h2m2 0h1m2 0h7M8 21.5h2m1 0h1m4 0h3m1 0h1m3 0h5M0 22.5h7m1 0h1m1 0h3m1 0h1m1 0h1m1 0h3m1 0h1m1 0h2m1 0h1M0 23.5h1m5 0h1m1 0h1m2 0h4m3 0h1m1 0h1m3 0h2M0 24.5h1m1 0h3m1 0h1m2 0h3m4 0h3m1 0h5m1 0h2M0 25.5h1m1 0h3m1 0h1m1 0h1m4 0h1m1 0h1m2 0h1m1 0h2m1 0h3m2 0h1M0 26.5h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h1m3 0h3m3 0h1m2 0h1m1 0h1M0 27.5h1m5 0h1m3 0h2m7 0h2m4 0h1m1 0h1M0 28.5h7m1 0h3m1 0h2m2 0h1m1 0h4m1 0h1m1 0h1m1 0h1"/></svg>
+    <p class="card__scan">Scan</p>
+  </div>
+</div>
+<div class="card">
+  <div class="card__body">
+    <p class="card__role">Served you today</p>
+    <p class="card__name">Sam</p>
+    <p class="card__ask">A minute for a review?</p>
+    <p class="card__venue">The Frog &amp; British Library</p>
+  </div>
+  <div class="card__qr">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" shape-rendering="crispEdges"><path stroke="#0F2119" d="M0 0.5h7m1 0h1m3 0h4m1 0h4m1 0h7M0 1.5h1m5 0h1m1 0h2m1 0h3m2 0h1m1 0h1m3 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m2 0h3m4 0h1m3 0h1m1 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h5m1 0h2m1 0h1m1 0h1m2 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m3 0h1m1 0h1m1 0h1m1 0h1m2 0h1m2 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m2 0h1m3 0h1m1 0h2m1 0h2m2 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M8 7.5h1m6 0h3m1 0h1M0 8.5h1m1 0h2m1 0h3m2 0h1m1 0h2m1 0h4m3 0h1m2 0h1m1 0h2M1 9.5h5m6 0h4m1 0h3m1 0h4m3 0h1M3 10.5h1m2 0h1m2 0h2m1 0h2m2 0h2m3 0h1m4 0h2M2 11.5h1m1 0h2m1 0h3m2 0h1m5 0h2m1 0h2m1 0h1m3 0h1M1 12.5h1m4 0h1m2 0h2m1 0h1m1 0h1m2 0h1m7 0h2M1 13.5h1m2 0h1m2 0h1m3 0h1m2 0h3m2 0h1m1 0h2m3 0h3M2 14.5h5m1 0h2m1 0h3m3 0h3m1 0h2m1 0h1m1 0h3M4 15.5h1m6 0h1m2 0h2m2 0h1m1 0h1m1 0h3m2 0h1M0 16.5h1m1 0h2m2 0h2m1 0h2m1 0h1m1 0h1m3 0h1m5 0h2m1 0h1M2 17.5h1m1 0h2m1 0h1m3 0h2m1 0h2m4 0h1m2 0h1m1 0h3M0 18.5h1m2 0h4m1 0h1m4 0h4m3 0h1m1 0h3m1 0h1M3 19.5h1m3 0h1m3 0h5m1 0h2m1 0h1m1 0h1m3 0h1M1 20.5h4m1 0h2m2 0h2m1 0h2m2 0h1m2 0h7M8 21.5h2m1 0h1m4 0h3m1 0h1m3 0h5M0 22.5h7m1 0h1m1 0h3m1 0h1m1 0h1m1 0h3m1 0h1m1 0h2m1 0h1M0 23.5h1m5 0h1m1 0h1m2 0h4m3 0h1m1 0h1m3 0h2M0 24.5h1m1 0h3m1 0h1m2 0h3m4 0h3m1 0h5m1 0h2M0 25.5h1m1 0h3m1 0h1m1 0h1m4 0h1m1 0h1m2 0h1m1 0h2m1 0h3m2 0h1M0 26.5h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h1m3 0h3m3 0h1m2 0h1m1 0h1M0 27.5h1m5 0h1m3 0h2m7 0h2m4 0h1m1 0h1M0 28.5h7m1 0h3m1 0h2m2 0h1m1 0h4m1 0h1m1 0h1m1 0h1"/></svg>
+    <p class="card__scan">Scan</p>
+  </div>
+</div>
+<div class="card">
+  <div class="card__body">
+    <p class="card__role">Served you today</p>
+    <p class="card__name">Sam</p>
+    <p class="card__ask">A minute for a review?</p>
+    <p class="card__venue">The Frog &amp; British Library</p>
+  </div>
+  <div class="card__qr">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" shape-rendering="crispEdges"><path stroke="#0F2119" d="M0 0.5h7m1 0h1m3 0h4m1 0h4m1 0h7M0 1.5h1m5 0h1m1 0h2m1 0h3m2 0h1m1 0h1m3 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m2 0h3m4 0h1m3 0h1m1 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h5m1 0h2m1 0h1m1 0h1m2 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m3 0h1m1 0h1m1 0h1m1 0h1m2 0h1m2 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m2 0h1m3 0h1m1 0h2m1 0h2m2 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M8 7.5h1m6 0h3m1 0h1M0 8.5h1m1 0h2m1 0h3m2 0h1m1 0h2m1 0h4m3 0h1m2 0h1m1 0h2M1 9.5h5m6 0h4m1 0h3m1 0h4m3 0h1M3 10.5h1m2 0h1m2 0h2m1 0h2m2 0h2m3 0h1m4 0h2M2 11.5h1m1 0h2m1 0h3m2 0h1m5 0h2m1 0h2m1 0h1m3 0h1M1 12.5h1m4 0h1m2 0h2m1 0h1m1 0h1m2 0h1m7 0h2M1 13.5h1m2 0h1m2 0h1m3 0h1m2 0h3m2 0h1m1 0h2m3 0h3M2 14.5h5m1 0h2m1 0h3m3 0h3m1 0h2m1 0h1m1 0h3M4 15.5h1m6 0h1m2 0h2m2 0h1m1 0h1m1 0h3m2 0h1M0 16.5h1m1 0h2m2 0h2m1 0h2m1 0h1m1 0h1m3 0h1m5 0h2m1 0h1M2 17.5h1m1 0h2m1 0h1m3 0h2m1 0h2m4 0h1m2 0h1m1 0h3M0 18.5h1m2 0h4m1 0h1m4 0h4m3 0h1m1 0h3m1 0h1M3 19.5h1m3 0h1m3 0h5m1 0h2m1 0h1m1 0h1m3 0h1M1 20.5h4m1 0h2m2 0h2m1 0h2m2 0h1m2 0h7M8 21.5h2m1 0h1m4 0h3m1 0h1m3 0h5M0 22.5h7m1 0h1m1 0h3m1 0h1m1 0h1m1 0h3m1 0h1m1 0h2m1 0h1M0 23.5h1m5 0h1m1 0h1m2 0h4m3 0h1m1 0h1m3 0h2M0 24.5h1m1 0h3m1 0h1m2 0h3m4 0h3m1 0h5m1 0h2M0 25.5h1m1 0h3m1 0h1m1 0h1m4 0h1m1 0h1m2 0h1m1 0h2m1 0h3m2 0h1M0 26.5h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h1m3 0h3m3 0h1m2 0h1m1 0h1M0 27.5h1m5 0h1m3 0h2m7 0h2m4 0h1m1 0h1M0 28.5h7m1 0h3m1 0h2m2 0h1m1 0h4m1 0h1m1 0h1m1 0h1"/></svg>
+    <p class="card__scan">Scan</p>
+  </div>
+</div>
+<div class="card">
+  <div class="card__body">
+    <p class="card__role">Served you today</p>
+    <p class="card__name">Sam</p>
+    <p class="card__ask">A minute for a review?</p>
+    <p class="card__venue">The Frog &amp; British Library</p>
+  </div>
+  <div class="card__qr">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" shape-rendering="crispEdges"><path stroke="#0F2119" d="M0 0.5h7m1 0h1m3 0h4m1 0h4m1 0h7M0 1.5h1m5 0h1m1 0h2m1 0h3m2 0h1m1 0h1m3 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m2 0h3m4 0h1m3 0h1m1 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h5m1 0h2m1 0h1m1 0h1m2 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m3 0h1m1 0h1m1 0h1m1 0h1m2 0h1m2 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m2 0h1m3 0h1m1 0h2m1 0h2m2 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M8 7.5h1m6 0h3m1 0h1M0 8.5h1m1 0h2m1 0h3m2 0h1m1 0h2m1 0h4m3 0h1m2 0h1m1 0h2M1 9.5h5m6 0h4m1 0h3m1 0h4m3 0h1M3 10.5h1m2 0h1m2 0h2m1 0h2m2 0h2m3 0h1m4 0h2M2 11.5h1m1 0h2m1 0h3m2 0h1m5 0h2m1 0h2m1 0h1m3 0h1M1 12.5h1m4 0h1m2 0h2m1 0h1m1 0h1m2 0h1m7 0h2M1 13.5h1m2 0h1m2 0h1m3 0h1m2 0h3m2 0h1m1 0h2m3 0h3M2 14.5h5m1 0h2m1 0h3m3 0h3m1 0h2m1 0h1m1 0h3M4 15.5h1m6 0h1m2 0h2m2 0h1m1 0h1m1 0h3m2 0h1M0 16.5h1m1 0h2m2 0h2m1 0h2m1 0h1m1 0h1m3 0h1m5 0h2m1 0h1M2 17.5h1m1 0h2m1 0h1m3 0h2m1 0h2m4 0h1m2 0h1m1 0h3M0 18.5h1m2 0h4m1 0h1m4 0h4m3 0h1m1 0h3m1 0h1M3 19.5h1m3 0h1m3 0h5m1 0h2m1 0h1m1 0h1m3 0h1M1 20.5h4m1 0h2m2 0h2m1 0h2m2 0h1m2 0h7M8 21.5h2m1 0h1m4 0h3m1 0h1m3 0h5M0 22.5h7m1 0h1m1 0h3m1 0h1m1 0h1m1 0h3m1 0h1m1 0h2m1 0h1M0 23.5h1m5 0h1m1 0h1m2 0h4m3 0h1m1 0h1m3 0h2M0 24.5h1m1 0h3m1 0h1m2 0h3m4 0h3m1 0h5m1 0h2M0 25.5h1m1 0h3m1 0h1m1 0h1m4 0h1m1 0h1m2 0h1m1 0h2m1 0h3m2 0h1M0 26.5h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h1m3 0h3m3 0h1m2 0h1m1 0h1M0 27.5h1m5 0h1m3 0h2m7 0h2m4 0h1m1 0h1M0 28.5h7m1 0h3m1 0h2m2 0h1m1 0h4m1 0h1m1 0h1m1 0h1"/></svg>
+    <p class="card__scan">Scan</p>
+  </div>
+</div>
+<div class="card">
+  <div class="card__body">
+    <p class="card__role">Served you today</p>
+    <p class="card__name">Sam</p>
+    <p class="card__ask">A minute for a review?</p>
+    <p class="card__venue">The Frog &amp; British Library</p>
+  </div>
+  <div class="card__qr">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" shape-rendering="crispEdges"><path stroke="#0F2119" d="M0 0.5h7m1 0h1m3 0h4m1 0h4m1 0h7M0 1.5h1m5 0h1m1 0h2m1 0h3m2 0h1m1 0h1m3 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m2 0h3m4 0h1m3 0h1m1 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h5m1 0h2m1 0h1m1 0h1m2 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m3 0h1m1 0h1m1 0h1m1 0h1m2 0h1m2 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m2 0h1m3 0h1m1 0h2m1 0h2m2 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M8 7.5h1m6 0h3m1 0h1M0 8.5h1m1 0h2m1 0h3m2 0h1m1 0h2m1 0h4m3 0h1m2 0h1m1 0h2M1 9.5h5m6 0h4m1 0h3m1 0h4m3 0h1M3 10.5h1m2 0h1m2 0h2m1 0h2m2 0h2m3 0h1m4 0h2M2 11.5h1m1 0h2m1 0h3m2 0h1m5 0h2m1 0h2m1 0h1m3 0h1M1 12.5h1m4 0h1m2 0h2m1 0h1m1 0h1m2 0h1m7 0h2M1 13.5h1m2 0h1m2 0h1m3 0h1m2 0h3m2 0h1m1 0h2m3 0h3M2 14.5h5m1 0h2m1 0h3m3 0h3m1 0h2m1 0h1m1 0h3M4 15.5h1m6 0h1m2 0h2m2 0h1m1 0h1m1 0h3m2 0h1M0 16.5h1m1 0h2m2 0h2m1 0h2m1 0h1m1 0h1m3 0h1m5 0h2m1 0h1M2 17.5h1m1 0h2m1 0h1m3 0h2m1 0h2m4 0h1m2 0h1m1 0h3M0 18.5h1m2 0h4m1 0h1m4 0h4m3 0h1m1 0h3m1 0h1M3 19.5h1m3 0h1m3 0h5m1 0h2m1 0h1m1 0h1m3 0h1M1 20.5h4m1 0h2m2 0h2m1 0h2m2 0h1m2 0h7M8 21.5h2m1 0h1m4 0h3m1 0h1m3 0h5M0 22.5h7m1 0h1m1 0h3m1 0h1m1 0h1m1 0h3m1 0h1m1 0h2m1 0h1M0 23.5h1m5 0h1m1 0h1m2 0h4m3 0h1m1 0h1m3 0h2M0 24.5h1m1 0h3m1 0h1m2 0h3m4 0h3m1 0h5m1 0h2M0 25.5h1m1 0h3m1 0h1m1 0h1m4 0h1m1 0h1m2 0h1m1 0h2m1 0h3m2 0h1M0 26.5h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h1m3 0h3m3 0h1m2 0h1m1 0h1M0 27.5h1m5 0h1m3 0h2m7 0h2m4 0h1m1 0h1M0 28.5h7m1 0h3m1 0h2m2 0h1m1 0h4m1 0h1m1 0h1m1 0h1"/></svg>
+    <p class="card__scan">Scan</p>
+  </div>
+</div>
+<div class="card">
+  <div class="card__body">
+    <p class="card__role">Served you today</p>
+    <p class="card__name">Sam</p>
+    <p class="card__ask">A minute for a review?</p>
+    <p class="card__venue">The Frog &amp; British Library</p>
+  </div>
+  <div class="card__qr">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" shape-rendering="crispEdges"><path stroke="#0F2119" d="M0 0.5h7m1 0h1m3 0h4m1 0h4m1 0h7M0 1.5h1m5 0h1m1 0h2m1 0h3m2 0h1m1 0h1m3 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m2 0h3m4 0h1m3 0h1m1 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h5m1 0h2m1 0h1m1 0h1m2 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m3 0h1m1 0h1m1 0h1m1 0h1m2 0h1m2 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m2 0h1m3 0h1m1 0h2m1 0h2m2 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M8 7.5h1m6 0h3m1 0h1M0 8.5h1m1 0h2m1 0h3m2 0h1m1 0h2m1 0h4m3 0h1m2 0h1m1 0h2M1 9.5h5m6 0h4m1 0h3m1 0h4m3 0h1M3 10.5h1m2 0h1m2 0h2m1 0h2m2 0h2m3 0h1m4 0h2M2 11.5h1m1 0h2m1 0h3m2 0h1m5 0h2m1 0h2m1 0h1m3 0h1M1 12.5h1m4 0h1m2 0h2m1 0h1m1 0h1m2 0h1m7 0h2M1 13.5h1m2 0h1m2 0h1m3 0h1m2 0h3m2 0h1m1 0h2m3 0h3M2 14.5h5m1 0h2m1 0h3m3 0h3m1 0h2m1 0h1m1 0h3M4 15.5h1m6 0h1m2 0h2m2 0h1m1 0h1m1 0h3m2 0h1M0 16.5h1m1 0h2m2 0h2m1 0h2m1 0h1m1 0h1m3 0h1m5 0h2m1 0h1M2 17.5h1m1 0h2m1 0h1m3 0h2m1 0h2m4 0h1m2 0h1m1 0h3M0 18.5h1m2 0h4m1 0h1m4 0h4m3 0h1m1 0h3m1 0h1M3 19.5h1m3 0h1m3 0h5m1 0h2m1 0h1m1 0h1m3 0h1M1 20.5h4m1 0h2m2 0h2m1 0h2m2 0h1m2 0h7M8 21.5h2m1 0h1m4 0h3m1 0h1m3 0h5M0 22.5h7m1 0h1m1 0h3m1 0h1m1 0h1m1 0h3m1 0h1m1 0h2m1 0h1M0 23.5h1m5 0h1m1 0h1m2 0h4m3 0h1m1 0h1m3 0h2M0 24.5h1m1 0h3m1 0h1m2 0h3m4 0h3m1 0h5m1 0h2M0 25.5h1m1 0h3m1 0h1m1 0h1m4 0h1m1 0h1m2 0h1m1 0h2m1 0h3m2 0h1M0 26.5h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h1m3 0h3m3 0h1m2 0h1m1 0h1M0 27.5h1m5 0h1m3 0h2m7 0h2m4 0h1m1 0h1M0 28.5h7m1 0h3m1 0h2m2 0h1m1 0h4m1 0h1m1 0h1m1 0h1"/></svg>
+    <p class="card__scan">Scan</p>
+  </div>
+</div>
+<div class="card">
+  <div class="card__body">
+    <p class="card__role">Served you today</p>
+    <p class="card__name">Sam</p>
+    <p class="card__ask">A minute for a review?</p>
+    <p class="card__venue">The Frog &amp; British Library</p>
+  </div>
+  <div class="card__qr">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" shape-rendering="crispEdges"><path stroke="#0F2119" d="M0 0.5h7m1 0h1m3 0h4m1 0h4m1 0h7M0 1.5h1m5 0h1m1 0h2m1 0h3m2 0h1m1 0h1m3 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m2 0h3m4 0h1m3 0h1m1 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h5m1 0h2m1 0h1m1 0h1m2 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m3 0h1m1 0h1m1 0h1m1 0h1m2 0h1m2 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m2 0h1m3 0h1m1 0h2m1 0h2m2 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M8 7.5h1m6 0h3m1 0h1M0 8.5h1m1 0h2m1 0h3m2 0h1m1 0h2m1 0h4m3 0h1m2 0h1m1 0h2M1 9.5h5m6 0h4m1 0h3m1 0h4m3 0h1M3 10.5h1m2 0h1m2 0h2m1 0h2m2 0h2m3 0h1m4 0h2M2 11.5h1m1 0h2m1 0h3m2 0h1m5 0h2m1 0h2m1 0h1m3 0h1M1 12.5h1m4 0h1m2 0h2m1 0h1m1 0h1m2 0h1m7 0h2M1 13.5h1m2 0h1m2 0h1m3 0h1m2 0h3m2 0h1m1 0h2m3 0h3M2 14.5h5m1 0h2m1 0h3m3 0h3m1 0h2m1 0h1m1 0h3M4 15.5h1m6 0h1m2 0h2m2 0h1m1 0h1m1 0h3m2 0h1M0 16.5h1m1 0h2m2 0h2m1 0h2m1 0h1m1 0h1m3 0h1m5 0h2m1 0h1M2 17.5h1m1 0h2m1 0h1m3 0h2m1 0h2m4 0h1m2 0h1m1 0h3M0 18.5h1m2 0h4m1 0h1m4 0h4m3 0h1m1 0h3m1 0h1M3 19.5h1m3 0h1m3 0h5m1 0h2m1 0h1m1 0h1m3 0h1M1 20.5h4m1 0h2m2 0h2m1 0h2m2 0h1m2 0h7M8 21.5h2m1 0h1m4 0h3m1 0h1m3 0h5M0 22.5h7m1 0h1m1 0h3m1 0h1m1 0h1m1 0h3m1 0h1m1 0h2m1 0h1M0 23.5h1m5 0h1m1 0h1m2 0h4m3 0h1m1 0h1m3 0h2M0 24.5h1m1 0h3m1 0h1m2 0h3m4 0h3m1 0h5m1 0h2M0 25.5h1m1 0h3m1 0h1m1 0h1m4 0h1m1 0h1m2 0h1m1 0h2m1 0h3m2 0h1M0 26.5h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h1m3 0h3m3 0h1m2 0h1m1 0h1M0 27.5h1m5 0h1m3 0h2m7 0h2m4 0h1m1 0h1M0 28.5h7m1 0h3m1 0h2m2 0h1m1 0h4m1 0h1m1 0h1m1 0h1"/></svg>
+    <p class="card__scan">Scan</p>
+  </div>
+</div>
+<div class="card">
+  <div class="card__body">
+    <p class="card__role">Served you today</p>
+    <p class="card__name">Sam</p>
+    <p class="card__ask">A minute for a review?</p>
+    <p class="card__venue">The Frog &amp; British Library</p>
+  </div>
+  <div class="card__qr">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" shape-rendering="crispEdges"><path stroke="#0F2119" d="M0 0.5h7m1 0h1m3 0h4m1 0h4m1 0h7M0 1.5h1m5 0h1m1 0h2m1 0h3m2 0h1m1 0h1m3 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m2 0h3m4 0h1m3 0h1m1 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h5m1 0h2m1 0h1m1 0h1m2 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m3 0h1m1 0h1m1 0h1m1 0h1m2 0h1m2 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m2 0h1m3 0h1m1 0h2m1 0h2m2 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M8 7.5h1m6 0h3m1 0h1M0 8.5h1m1 0h2m1 0h3m2 0h1m1 0h2m1 0h4m3 0h1m2 0h1m1 0h2M1 9.5h5m6 0h4m1 0h3m1 0h4m3 0h1M3 10.5h1m2 0h1m2 0h2m1 0h2m2 0h2m3 0h1m4 0h2M2 11.5h1m1 0h2m1 0h3m2 0h1m5 0h2m1 0h2m1 0h1m3 0h1M1 12.5h1m4 0h1m2 0h2m1 0h1m1 0h1m2 0h1m7 0h2M1 13.5h1m2 0h1m2 0h1m3 0h1m2 0h3m2 0h1m1 0h2m3 0h3M2 14.5h5m1 0h2m1 0h3m3 0h3m1 0h2m1 0h1m1 0h3M4 15.5h1m6 0h1m2 0h2m2 0h1m1 0h1m1 0h3m2 0h1M0 16.5h1m1 0h2m2 0h2m1 0h2m1 0h1m1 0h1m3 0h1m5 0h2m1 0h1M2 17.5h1m1 0h2m1 0h1m3 0h2m1 0h2m4 0h1m2 0h1m1 0h3M0 18.5h1m2 0h4m1 0h1m4 0h4m3 0h1m1 0h3m1 0h1M3 19.5h1m3 0h1m3 0h5m1 0h2m1 0h1m1 0h1m3 0h1M1 20.5h4m1 0h2m2 0h2m1 0h2m2 0h1m2 0h7M8 21.5h2m1 0h1m4 0h3m1 0h1m3 0h5M0 22.5h7m1 0h1m1 0h3m1 0h1m1 0h1m1 0h3m1 0h1m1 0h2m1 0h1M0 23.5h1m5 0h1m1 0h1m2 0h4m3 0h1m1 0h1m3 0h2M0 24.5h1m1 0h3m1 0h1m2 0h3m4 0h3m1 0h5m1 0h2M0 25.5h1m1 0h3m1 0h1m1 0h1m4 0h1m1 0h1m2 0h1m1 0h2m1 0h3m2 0h1M0 26.5h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h1m3 0h3m3 0h1m2 0h1m1 0h1M0 27.5h1m5 0h1m3 0h2m7 0h2m4 0h1m1 0h1M0 28.5h7m1 0h3m1 0h2m2 0h1m1 0h4m1 0h1m1 0h1m1 0h1"/></svg>
+    <p class="card__scan">Scan</p>
+  </div>
+</div>
+</section>
+<section class="sheet"><div class="card">
+  <div class="card__body">
+    <p class="card__role">Served you today</p>
+    <p class="card__name">Sam</p>
+    <p class="card__ask">A minute for a review?</p>
+    <p class="card__venue">The Frog &amp; British Library</p>
+  </div>
+  <div class="card__qr">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" shape-rendering="crispEdges"><path stroke="#0F2119" d="M0 0.5h7m1 0h1m3 0h4m1 0h4m1 0h7M0 1.5h1m5 0h1m1 0h2m1 0h3m2 0h1m1 0h1m3 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m2 0h3m4 0h1m3 0h1m1 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h5m1 0h2m1 0h1m1 0h1m2 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m3 0h1m1 0h1m1 0h1m1 0h1m2 0h1m2 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m2 0h1m3 0h1m1 0h2m1 0h2m2 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M8 7.5h1m6 0h3m1 0h1M0 8.5h1m1 0h2m1 0h3m2 0h1m1 0h2m1 0h4m3 0h1m2 0h1m1 0h2M1 9.5h5m6 0h4m1 0h3m1 0h4m3 0h1M3 10.5h1m2 0h1m2 0h2m1 0h2m2 0h2m3 0h1m4 0h2M2 11.5h1m1 0h2m1 0h3m2 0h1m5 0h2m1 0h2m1 0h1m3 0h1M1 12.5h1m4 0h1m2 0h2m1 0h1m1 0h1m2 0h1m7 0h2M1 13.5h1m2 0h1m2 0h1m3 0h1m2 0h3m2 0h1m1 0h2m3 0h3M2 14.5h5m1 0h2m1 0h3m3 0h3m1 0h2m1 0h1m1 0h3M4 15.5h1m6 0h1m2 0h2m2 0h1m1 0h1m1 0h3m2 0h1M0 16.5h1m1 0h2m2 0h2m1 0h2m1 0h1m1 0h1m3 0h1m5 0h2m1 0h1M2 17.5h1m1 0h2m1 0h1m3 0h2m1 0h2m4 0h1m2 0h1m1 0h3M0 18.5h1m2 0h4m1 0h1m4 0h4m3 0h1m1 0h3m1 0h1M3 19.5h1m3 0h1m3 0h5m1 0h2m1 0h1m1 0h1m3 0h1M1 20.5h4m1 0h2m2 0h2m1 0h2m2 0h1m2 0h7M8 21.5h2m1 0h1m4 0h3m1 0h1m3 0h5M0 22.5h7m1 0h1m1 0h3m1 0h1m1 0h1m1 0h3m1 0h1m1 0h2m1 0h1M0 23.5h1m5 0h1m1 0h1m2 0h4m3 0h1m1 0h1m3 0h2M0 24.5h1m1 0h3m1 0h1m2 0h3m4 0h3m1 0h5m1 0h2M0 25.5h1m1 0h3m1 0h1m1 0h1m4 0h1m1 0h1m2 0h1m1 0h2m1 0h3m2 0h1M0 26.5h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h1m3 0h3m3 0h1m2 0h1m1 0h1M0 27.5h1m5 0h1m3 0h2m7 0h2m4 0h1m1 0h1M0 28.5h7m1 0h3m1 0h2m2 0h1m1 0h4m1 0h1m1 0h1m1 0h1"/></svg>
+    <p class="card__scan">Scan</p>
+  </div>
+</div>
+<div class="card">
+  <div class="card__body">
+    <p class="card__role">Served you today</p>
+    <p class="card__name">Sam</p>
+    <p class="card__ask">A minute for a review?</p>
+    <p class="card__venue">The Frog &amp; British Library</p>
+  </div>
+  <div class="card__qr">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" shape-rendering="crispEdges"><path stroke="#0F2119" d="M0 0.5h7m1 0h1m3 0h4m1 0h4m1 0h7M0 1.5h1m5 0h1m1 0h2m1 0h3m2 0h1m1 0h1m3 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m2 0h3m4 0h1m3 0h1m1 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h5m1 0h2m1 0h1m1 0h1m2 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m3 0h1m1 0h1m1 0h1m1 0h1m2 0h1m2 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m2 0h1m3 0h1m1 0h2m1 0h2m2 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M8 7.5h1m6 0h3m1 0h1M0 8.5h1m1 0h2m1 0h3m2 0h1m1 0h2m1 0h4m3 0h1m2 0h1m1 0h2M1 9.5h5m6 0h4m1 0h3m1 0h4m3 0h1M3 10.5h1m2 0h1m2 0h2m1 0h2m2 0h2m3 0h1m4 0h2M2 11.5h1m1 0h2m1 0h3m2 0h1m5 0h2m1 0h2m1 0h1m3 0h1M1 12.5h1m4 0h1m2 0h2m1 0h1m1 0h1m2 0h1m7 0h2M1 13.5h1m2 0h1m2 0h1m3 0h1m2 0h3m2 0h1m1 0h2m3 0h3M2 14.5h5m1 0h2m1 0h3m3 0h3m1 0h2m1 0h1m1 0h3M4 15.5h1m6 0h1m2 0h2m2 0h1m1 0h1m1 0h3m2 0h1M0 16.5h1m1 0h2m2 0h2m1 0h2m1 0h1m1 0h1m3 0h1m5 0h2m1 0h1M2 17.5h1m1 0h2m1 0h1m3 0h2m1 0h2m4 0h1m2 0h1m1 0h3M0 18.5h1m2 0h4m1 0h1m4 0h4m3 0h1m1 0h3m1 0h1M3 19.5h1m3 0h1m3 0h5m1 0h2m1 0h1m1 0h1m3 0h1M1 20.5h4m1 0h2m2 0h2m1 0h2m2 0h1m2 0h7M8 21.5h2m1 0h1m4 0h3m1 0h1m3 0h5M0 22.5h7m1 0h1m1 0h3m1 0h1m1 0h1m1 0h3m1 0h1m1 0h2m1 0h1M0 23.5h1m5 0h1m1 0h1m2 0h4m3 0h1m1 0h1m3 0h2M0 24.5h1m1 0h3m1 0h1m2 0h3m4 0h3m1 0h5m1 0h2M0 25.5h1m1 0h3m1 0h1m1 0h1m4 0h1m1 0h1m2 0h1m1 0h2m1 0h3m2 0h1M0 26.5h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h1m3 0h3m3 0h1m2 0h1m1 0h1M0 27.5h1m5 0h1m3 0h2m7 0h2m4 0h1m1 0h1M0 28.5h7m1 0h3m1 0h2m2 0h1m1 0h4m1 0h1m1 0h1m1 0h1"/></svg>
+    <p class="card__scan">Scan</p>
+  </div>
+</div>
+<div class="card">
+  <div class="card__body">
+    <p class="card__role">Served you today</p>
+    <p class="card__name">Sam</p>
+    <p class="card__ask">A minute for a review?</p>
+    <p class="card__venue">The Frog &amp; British Library</p>
+  </div>
+  <div class="card__qr">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" shape-rendering="crispEdges"><path stroke="#0F2119" d="M0 0.5h7m1 0h1m3 0h4m1 0h4m1 0h7M0 1.5h1m5 0h1m1 0h2m1 0h3m2 0h1m1 0h1m3 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m2 0h3m4 0h1m3 0h1m1 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h5m1 0h2m1 0h1m1 0h1m2 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m3 0h1m1 0h1m1 0h1m1 0h1m2 0h1m2 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m2 0h1m3 0h1m1 0h2m1 0h2m2 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M8 7.5h1m6 0h3m1 0h1M0 8.5h1m1 0h2m1 0h3m2 0h1m1 0h2m1 0h4m3 0h1m2 0h1m1 0h2M1 9.5h5m6 0h4m1 0h3m1 0h4m3 0h1M3 10.5h1m2 0h1m2 0h2m1 0h2m2 0h2m3 0h1m4 0h2M2 11.5h1m1 0h2m1 0h3m2 0h1m5 0h2m1 0h2m1 0h1m3 0h1M1 12.5h1m4 0h1m2 0h2m1 0h1m1 0h1m2 0h1m7 0h2M1 13.5h1m2 0h1m2 0h1m3 0h1m2 0h3m2 0h1m1 0h2m3 0h3M2 14.5h5m1 0h2m1 0h3m3 0h3m1 0h2m1 0h1m1 0h3M4 15.5h1m6 0h1m2 0h2m2 0h1m1 0h1m1 0h3m2 0h1M0 16.5h1m1 0h2m2 0h2m1 0h2m1 0h1m1 0h1m3 0h1m5 0h2m1 0h1M2 17.5h1m1 0h2m1 0h1m3 0h2m1 0h2m4 0h1m2 0h1m1 0h3M0 18.5h1m2 0h4m1 0h1m4 0h4m3 0h1m1 0h3m1 0h1M3 19.5h1m3 0h1m3 0h5m1 0h2m1 0h1m1 0h1m3 0h1M1 20.5h4m1 0h2m2 0h2m1 0h2m2 0h1m2 0h7M8 21.5h2m1 0h1m4 0h3m1 0h1m3 0h5M0 22.5h7m1 0h1m1 0h3m1 0h1m1 0h1m1 0h3m1 0h1m1 0h2m1 0h1M0 23.5h1m5 0h1m1 0h1m2 0h4m3 0h1m1 0h1m3 0h2M0 24.5h1m1 0h3m1 0h1m2 0h3m4 0h3m1 0h5m1 0h2M0 25.5h1m1 0h3m1 0h1m1 0h1m4 0h1m1 0h1m2 0h1m1 0h2m1 0h3m2 0h1M0 26.5h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h1m3 0h3m3 0h1m2 0h1m1 0h1M0 27.5h1m5 0h1m3 0h2m7 0h2m4 0h1m1 0h1M0 28.5h7m1 0h3m1 0h2m2 0h1m1 0h4m1 0h1m1 0h1m1 0h1"/></svg>
+    <p class="card__scan">Scan</p>
+  </div>
+</div>
+<div class="card">
+  <div class="card__body">
+    <p class="card__role">Served you today</p>
+    <p class="card__name">Sam</p>
+    <p class="card__ask">A minute for a review?</p>
+    <p class="card__venue">The Frog &amp; British Library</p>
+  </div>
+  <div class="card__qr">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" shape-rendering="crispEdges"><path stroke="#0F2119" d="M0 0.5h7m1 0h1m3 0h4m1 0h4m1 0h7M0 1.5h1m5 0h1m1 0h2m1 0h3m2 0h1m1 0h1m3 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m2 0h3m4 0h1m3 0h1m1 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h5m1 0h2m1 0h1m1 0h1m2 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m3 0h1m1 0h1m1 0h1m1 0h1m2 0h1m2 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m2 0h1m3 0h1m1 0h2m1 0h2m2 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M8 7.5h1m6 0h3m1 0h1M0 8.5h1m1 0h2m1 0h3m2 0h1m1 0h2m1 0h4m3 0h1m2 0h1m1 0h2M1 9.5h5m6 0h4m1 0h3m1 0h4m3 0h1M3 10.5h1m2 0h1m2 0h2m1 0h2m2 0h2m3 0h1m4 0h2M2 11.5h1m1 0h2m1 0h3m2 0h1m5 0h2m1 0h2m1 0h1m3 0h1M1 12.5h1m4 0h1m2 0h2m1 0h1m1 0h1m2 0h1m7 0h2M1 13.5h1m2 0h1m2 0h1m3 0h1m2 0h3m2 0h1m1 0h2m3 0h3M2 14.5h5m1 0h2m1 0h3m3 0h3m1 0h2m1 0h1m1 0h3M4 15.5h1m6 0h1m2 0h2m2 0h1m1 0h1m1 0h3m2 0h1M0 16.5h1m1 0h2m2 0h2m1 0h2m1 0h1m1 0h1m3 0h1m5 0h2m1 0h1M2 17.5h1m1 0h2m1 0h1m3 0h2m1 0h2m4 0h1m2 0h1m1 0h3M0 18.5h1m2 0h4m1 0h1m4 0h4m3 0h1m1 0h3m1 0h1M3 19.5h1m3 0h1m3 0h5m1 0h2m1 0h1m1 0h1m3 0h1M1 20.5h4m1 0h2m2 0h2m1 0h2m2 0h1m2 0h7M8 21.5h2m1 0h1m4 0h3m1 0h1m3 0h5M0 22.5h7m1 0h1m1 0h3m1 0h1m1 0h1m1 0h3m1 0h1m1 0h2m1 0h1M0 23.5h1m5 0h1m1 0h1m2 0h4m3 0h1m1 0h1m3 0h2M0 24.5h1m1 0h3m1 0h1m2 0h3m4 0h3m1 0h5m1 0h2M0 25.5h1m1 0h3m1 0h1m1 0h1m4 0h1m1 0h1m2 0h1m1 0h2m1 0h3m2 0h1M0 26.5h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h1m3 0h3m3 0h1m2 0h1m1 0h1M0 27.5h1m5 0h1m3 0h2m7 0h2m4 0h1m1 0h1M0 28.5h7m1 0h3m1 0h2m2 0h1m1 0h4m1 0h1m1 0h1m1 0h1"/></svg>
+    <p class="card__scan">Scan</p>
+  </div>
+</div>
+<div class="card">
+  <div class="card__body">
+    <p class="card__role">Served you today</p>
+    <p class="card__name">Sam</p>
+    <p class="card__ask">A minute for a review?</p>
+    <p class="card__venue">The Frog &amp; British Library</p>
+  </div>
+  <div class="card__qr">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" shape-rendering="crispEdges"><path stroke="#0F2119" d="M0 0.5h7m1 0h1m3 0h4m1 0h4m1 0h7M0 1.5h1m5 0h1m1 0h2m1 0h3m2 0h1m1 0h1m3 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m2 0h3m4 0h1m3 0h1m1 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h5m1 0h2m1 0h1m1 0h1m2 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m3 0h1m1 0h1m1 0h1m1 0h1m2 0h1m2 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m2 0h1m3 0h1m1 0h2m1 0h2m2 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M8 7.5h1m6 0h3m1 0h1M0 8.5h1m1 0h2m1 0h3m2 0h1m1 0h2m1 0h4m3 0h1m2 0h1m1 0h2M1 9.5h5m6 0h4m1 0h3m1 0h4m3 0h1M3 10.5h1m2 0h1m2 0h2m1 0h2m2 0h2m3 0h1m4 0h2M2 11.5h1m1 0h2m1 0h3m2 0h1m5 0h2m1 0h2m1 0h1m3 0h1M1 12.5h1m4 0h1m2 0h2m1 0h1m1 0h1m2 0h1m7 0h2M1 13.5h1m2 0h1m2 0h1m3 0h1m2 0h3m2 0h1m1 0h2m3 0h3M2 14.5h5m1 0h2m1 0h3m3 0h3m1 0h2m1 0h1m1 0h3M4 15.5h1m6 0h1m2 0h2m2 0h1m1 0h1m1 0h3m2 0h1M0 16.5h1m1 0h2m2 0h2m1 0h2m1 0h1m1 0h1m3 0h1m5 0h2m1 0h1M2 17.5h1m1 0h2m1 0h1m3 0h2m1 0h2m4 0h1m2 0h1m1 0h3M0 18.5h1m2 0h4m1 0h1m4 0h4m3 0h1m1 0h3m1 0h1M3 19.5h1m3 0h1m3 0h5m1 0h2m1 0h1m1 0h1m3 0h1M1 20.5h4m1 0h2m2 0h2m1 0h2m2 0h1m2 0h7M8 21.5h2m1 0h1m4 0h3m1 0h1m3 0h5M0 22.5h7m1 0h1m1 0h3m1 0h1m1 0h1m1 0h3m1 0h1m1 0h2m1 0h1M0 23.5h1m5 0h1m1 0h1m2 0h4m3 0h1m1 0h1m3 0h2M0 24.5h1m1 0h3m1 0h1m2 0h3m4 0h3m1 0h5m1 0h2M0 25.5h1m1 0h3m1 0h1m1 0h1m4 0h1m1 0h1m2 0h1m1 0h2m1 0h3m2 0h1M0 26.5h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h1m3 0h3m3 0h1m2 0h1m1 0h1M0 27.5h1m5 0h1m3 0h2m7 0h2m4 0h1m1 0h1M0 28.5h7m1 0h3m1 0h2m2 0h1m1 0h4m1 0h1m1 0h1m1 0h1"/></svg>
+    <p class="card__scan">Scan</p>
+  </div>
+</div>
+<div class="card">
+  <div class="card__body">
+    <p class="card__role">Served you today</p>
+    <p class="card__name">Sam</p>
+    <p class="card__ask">A minute for a review?</p>
+    <p class="card__venue">The Frog &amp; British Library</p>
+  </div>
+  <div class="card__qr">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" shape-rendering="crispEdges"><path stroke="#0F2119" d="M0 0.5h7m1 0h1m3 0h4m1 0h4m1 0h7M0 1.5h1m5 0h1m1 0h2m1 0h3m2 0h1m1 0h1m3 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m2 0h3m4 0h1m3 0h1m1 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h5m1 0h2m1 0h1m1 0h1m2 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m3 0h1m1 0h1m1 0h1m1 0h1m2 0h1m2 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m2 0h1m3 0h1m1 0h2m1 0h2m2 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M8 7.5h1m6 0h3m1 0h1M0 8.5h1m1 0h2m1 0h3m2 0h1m1 0h2m1 0h4m3 0h1m2 0h1m1 0h2M1 9.5h5m6 0h4m1 0h3m1 0h4m3 0h1M3 10.5h1m2 0h1m2 0h2m1 0h2m2 0h2m3 0h1m4 0h2M2 11.5h1m1 0h2m1 0h3m2 0h1m5 0h2m1 0h2m1 0h1m3 0h1M1 12.5h1m4 0h1m2 0h2m1 0h1m1 0h1m2 0h1m7 0h2M1 13.5h1m2 0h1m2 0h1m3 0h1m2 0h3m2 0h1m1 0h2m3 0h3M2 14.5h5m1 0h2m1 0h3m3 0h3m1 0h2m1 0h1m1 0h3M4 15.5h1m6 0h1m2 0h2m2 0h1m1 0h1m1 0h3m2 0h1M0 16.5h1m1 0h2m2 0h2m1 0h2m1 0h1m1 0h1m3 0h1m5 0h2m1 0h1M2 17.5h1m1 0h2m1 0h1m3 0h2m1 0h2m4 0h1m2 0h1m1 0h3M0 18.5h1m2 0h4m1 0h1m4 0h4m3 0h1m1 0h3m1 0h1M3 19.5h1m3 0h1m3 0h5m1 0h2m1 0h1m1 0h1m3 0h1M1 20.5h4m1 0h2m2 0h2m1 0h2m2 0h1m2 0h7M8 21.5h2m1 0h1m4 0h3m1 0h1m3 0h5M0 22.5h7m1 0h1m1 0h3m1 0h1m1 0h1m1 0h3m1 0h1m1 0h2m1 0h1M0 23.5h1m5 0h1m1 0h1m2 0h4m3 0h1m1 0h1m3 0h2M0 24.5h1m1 0h3m1 0h1m2 0h3m4 0h3m1 0h5m1 0h2M0 25.5h1m1 0h3m1 0h1m1 0h1m4 0h1m1 0h1m2 0h1m1 0h2m1 0h3m2 0h1M0 26.5h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h1m3 0h3m3 0h1m2 0h1m1 0h1M0 27.5h1m5 0h1m3 0h2m7 0h2m4 0h1m1 0h1M0 28.5h7m1 0h3m1 0h2m2 0h1m1 0h4m1 0h1m1 0h1m1 0h1"/></svg>
+    <p class="card__scan">Scan</p>
+  </div>
+</div>
+<div class="card">
+  <div class="card__body">
+    <p class="card__role">Served you today</p>
+    <p class="card__name">Sam</p>
+    <p class="card__ask">A minute for a review?</p>
+    <p class="card__venue">The Frog &amp; British Library</p>
+  </div>
+  <div class="card__qr">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" shape-rendering="crispEdges"><path stroke="#0F2119" d="M0 0.5h7m1 0h1m3 0h4m1 0h4m1 0h7M0 1.5h1m5 0h1m1 0h2m1 0h3m2 0h1m1 0h1m3 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m2 0h3m4 0h1m3 0h1m1 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h5m1 0h2m1 0h1m1 0h1m2 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m3 0h1m1 0h1m1 0h1m1 0h1m2 0h1m2 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m2 0h1m3 0h1m1 0h2m1 0h2m2 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M8 7.5h1m6 0h3m1 0h1M0 8.5h1m1 0h2m1 0h3m2 0h1m1 0h2m1 0h4m3 0h1m2 0h1m1 0h2M1 9.5h5m6 0h4m1 0h3m1 0h4m3 0h1M3 10.5h1m2 0h1m2 0h2m1 0h2m2 0h2m3 0h1m4 0h2M2 11.5h1m1 0h2m1 0h3m2 0h1m5 0h2m1 0h2m1 0h1m3 0h1M1 12.5h1m4 0h1m2 0h2m1 0h1m1 0h1m2 0h1m7 0h2M1 13.5h1m2 0h1m2 0h1m3 0h1m2 0h3m2 0h1m1 0h2m3 0h3M2 14.5h5m1 0h2m1 0h3m3 0h3m1 0h2m1 0h1m1 0h3M4 15.5h1m6 0h1m2 0h2m2 0h1m1 0h1m1 0h3m2 0h1M0 16.5h1m1 0h2m2 0h2m1 0h2m1 0h1m1 0h1m3 0h1m5 0h2m1 0h1M2 17.5h1m1 0h2m1 0h1m3 0h2m1 0h2m4 0h1m2 0h1m1 0h3M0 18.5h1m2 0h4m1 0h1m4 0h4m3 0h1m1 0h3m1 0h1M3 19.5h1m3 0h1m3 0h5m1 0h2m1 0h1m1 0h1m3 0h1M1 20.5h4m1 0h2m2 0h2m1 0h2m2 0h1m2 0h7M8 21.5h2m1 0h1m4 0h3m1 0h1m3 0h5M0 22.5h7m1 0h1m1 0h3m1 0h1m1 0h1m1 0h3m1 0h1m1 0h2m1 0h1M0 23.5h1m5 0h1m1 0h1m2 0h4m3 0h1m1 0h1m3 0h2M0 24.5h1m1 0h3m1 0h1m2 0h3m4 0h3m1 0h5m1 0h2M0 25.5h1m1 0h3m1 0h1m1 0h1m4 0h1m1 0h1m2 0h1m1 0h2m1 0h3m2 0h1M0 26.5h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h1m3 0h3m3 0h1m2 0h1m1 0h1M0 27.5h1m5 0h1m3 0h2m7 0h2m4 0h1m1 0h1M0 28.5h7m1 0h3m1 0h2m2 0h1m1 0h4m1 0h1m1 0h1m1 0h1"/></svg>
+    <p class="card__scan">Scan</p>
+  </div>
+</div>
+<div class="card">
+  <div class="card__body">
+    <p class="card__role">Served you today</p>
+    <p class="card__name">Sam</p>
+    <p class="card__ask">A minute for a review?</p>
+    <p class="card__venue">The Frog &amp; British Library</p>
+  </div>
+  <div class="card__qr">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" shape-rendering="crispEdges"><path stroke="#0F2119" d="M0 0.5h7m1 0h1m3 0h4m1 0h4m1 0h7M0 1.5h1m5 0h1m1 0h2m1 0h3m2 0h1m1 0h1m3 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m2 0h3m4 0h1m3 0h1m1 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h5m1 0h2m1 0h1m1 0h1m2 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m3 0h1m1 0h1m1 0h1m1 0h1m2 0h1m2 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m2 0h1m3 0h1m1 0h2m1 0h2m2 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M8 7.5h1m6 0h3m1 0h1M0 8.5h1m1 0h2m1 0h3m2 0h1m1 0h2m1 0h4m3 0h1m2 0h1m1 0h2M1 9.5h5m6 0h4m1 0h3m1 0h4m3 0h1M3 10.5h1m2 0h1m2 0h2m1 0h2m2 0h2m3 0h1m4 0h2M2 11.5h1m1 0h2m1 0h3m2 0h1m5 0h2m1 0h2m1 0h1m3 0h1M1 12.5h1m4 0h1m2 0h2m1 0h1m1 0h1m2 0h1m7 0h2M1 13.5h1m2 0h1m2 0h1m3 0h1m2 0h3m2 0h1m1 0h2m3 0h3M2 14.5h5m1 0h2m1 0h3m3 0h3m1 0h2m1 0h1m1 0h3M4 15.5h1m6 0h1m2 0h2m2 0h1m1 0h1m1 0h3m2 0h1M0 16.5h1m1 0h2m2 0h2m1 0h2m1 0h1m1 0h1m3 0h1m5 0h2m1 0h1M2 17.5h1m1 0h2m1 0h1m3 0h2m1 0h2m4 0h1m2 0h1m1 0h3M0 18.5h1m2 0h4m1 0h1m4 0h4m3 0h1m1 0h3m1 0h1M3 19.5h1m3 0h1m3 0h5m1 0h2m1 0h1m1 0h1m3 0h1M1 20.5h4m1 0h2m2 0h2m1 0h2m2 0h1m2 0h7M8 21.5h2m1 0h1m4 0h3m1 0h1m3 0h5M0 22.5h7m1 0h1m1 0h3m1 0h1m1 0h1m1 0h3m1 0h1m1 0h2m1 0h1M0 23.5h1m5 0h1m1 0h1m2 0h4m3 0h1m1 0h1m3 0h2M0 24.5h1m1 0h3m1 0h1m2 0h3m4 0h3m1 0h5m1 0h2M0 25.5h1m1 0h3m1 0h1m1 0h1m4 0h1m1 0h1m2 0h1m1 0h2m1 0h3m2 0h1M0 26.5h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h1m3 0h3m3 0h1m2 0h1m1 0h1M0 27.5h1m5 0h1m3 0h2m7 0h2m4 0h1m1 0h1M0 28.5h7m1 0h3m1 0h2m2 0h1m1 0h4m1 0h1m1 0h1m1 0h1"/></svg>
+    <p class="card__scan">Scan</p>
+  </div>
+</div>
+<div class="card">
+  <div class="card__body">
+    <p class="card__role">Served you today</p>
+    <p class="card__name">Sam</p>
+    <p class="card__ask">A minute for a review?</p>
+    <p class="card__venue">The Frog &amp; British Library</p>
+  </div>
+  <div class="card__qr">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" shape-rendering="crispEdges"><path stroke="#0F2119" d="M0 0.5h7m1 0h1m3 0h4m1 0h4m1 0h7M0 1.5h1m5 0h1m1 0h2m1 0h3m2 0h1m1 0h1m3 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m2 0h3m4 0h1m3 0h1m1 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h5m1 0h2m1 0h1m1 0h1m2 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m3 0h1m1 0h1m1 0h1m1 0h1m2 0h1m2 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m2 0h1m3 0h1m1 0h2m1 0h2m2 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M8 7.5h1m6 0h3m1 0h1M0 8.5h1m1 0h2m1 0h3m2 0h1m1 0h2m1 0h4m3 0h1m2 0h1m1 0h2M1 9.5h5m6 0h4m1 0h3m1 0h4m3 0h1M3 10.5h1m2 0h1m2 0h2m1 0h2m2 0h2m3 0h1m4 0h2M2 11.5h1m1 0h2m1 0h3m2 0h1m5 0h2m1 0h2m1 0h1m3 0h1M1 12.5h1m4 0h1m2 0h2m1 0h1m1 0h1m2 0h1m7 0h2M1 13.5h1m2 0h1m2 0h1m3 0h1m2 0h3m2 0h1m1 0h2m3 0h3M2 14.5h5m1 0h2m1 0h3m3 0h3m1 0h2m1 0h1m1 0h3M4 15.5h1m6 0h1m2 0h2m2 0h1m1 0h1m1 0h3m2 0h1M0 16.5h1m1 0h2m2 0h2m1 0h2m1 0h1m1 0h1m3 0h1m5 0h2m1 0h1M2 17.5h1m1 0h2m1 0h1m3 0h2m1 0h2m4 0h1m2 0h1m1 0h3M0 18.5h1m2 0h4m1 0h1m4 0h4m3 0h1m1 0h3m1 0h1M3 19.5h1m3 0h1m3 0h5m1 0h2m1 0h1m1 0h1m3 0h1M1 20.5h4m1 0h2m2 0h2m1 0h2m2 0h1m2 0h7M8 21.5h2m1 0h1m4 0h3m1 0h1m3 0h5M0 22.5h7m1 0h1m1 0h3m1 0h1m1 0h1m1 0h3m1 0h1m1 0h2m1 0h1M0 23.5h1m5 0h1m1 0h1m2 0h4m3 0h1m1 0h1m3 0h2M0 24.5h1m1 0h3m1 0h1m2 0h3m4 0h3m1 0h5m1 0h2M0 25.5h1m1 0h3m1 0h1m1 0h1m4 0h1m1 0h1m2 0h1m1 0h2m1 0h3m2 0h1M0 26.5h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h1m3 0h3m3 0h1m2 0h1m1 0h1M0 27.5h1m5 0h1m3 0h2m7 0h2m4 0h1m1 0h1M0 28.5h7m1 0h3m1 0h2m2 0h1m1 0h4m1 0h1m1 0h1m1 0h1"/></svg>
+    <p class="card__scan">Scan</p>
+  </div>
+</div>
+<div class="card">
+  <div class="card__body">
+    <p class="card__role">Served you today</p>
+    <p class="card__name">Sam</p>
+    <p class="card__ask">A minute for a review?</p>
+    <p class="card__venue">The Frog &amp; British Library</p>
+  </div>
+  <div class="card__qr">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" shape-rendering="crispEdges"><path stroke="#0F2119" d="M0 0.5h7m1 0h1m3 0h4m1 0h4m1 0h7M0 1.5h1m5 0h1m1 0h2m1 0h3m2 0h1m1 0h1m3 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m2 0h3m4 0h1m3 0h1m1 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h5m1 0h2m1 0h1m1 0h1m2 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m3 0h1m1 0h1m1 0h1m1 0h1m2 0h1m2 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m2 0h1m3 0h1m1 0h2m1 0h2m2 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M8 7.5h1m6 0h3m1 0h1M0 8.5h1m1 0h2m1 0h3m2 0h1m1 0h2m1 0h4m3 0h1m2 0h1m1 0h2M1 9.5h5m6 0h4m1 0h3m1 0h4m3 0h1M3 10.5h1m2 0h1m2 0h2m1 0h2m2 0h2m3 0h1m4 0h2M2 11.5h1m1 0h2m1 0h3m2 0h1m5 0h2m1 0h2m1 0h1m3 0h1M1 12.5h1m4 0h1m2 0h2m1 0h1m1 0h1m2 0h1m7 0h2M1 13.5h1m2 0h1m2 0h1m3 0h1m2 0h3m2 0h1m1 0h2m3 0h3M2 14.5h5m1 0h2m1 0h3m3 0h3m1 0h2m1 0h1m1 0h3M4 15.5h1m6 0h1m2 0h2m2 0h1m1 0h1m1 0h3m2 0h1M0 16.5h1m1 0h2m2 0h2m1 0h2m1 0h1m1 0h1m3 0h1m5 0h2m1 0h1M2 17.5h1m1 0h2m1 0h1m3 0h2m1 0h2m4 0h1m2 0h1m1 0h3M0 18.5h1m2 0h4m1 0h1m4 0h4m3 0h1m1 0h3m1 0h1M3 19.5h1m3 0h1m3 0h5m1 0h2m1 0h1m1 0h1m3 0h1M1 20.5h4m1 0h2m2 0h2m1 0h2m2 0h1m2 0h7M8 21.5h2m1 0h1m4 0h3m1 0h1m3 0h5M0 22.5h7m1 0h1m1 0h3m1 0h1m1 0h1m1 0h3m1 0h1m1 0h2m1 0h1M0 23.5h1m5 0h1m1 0h1m2 0h4m3 0h1m1 0h1m3 0h2M0 24.5h1m1 0h3m1 0h1m2 0h3m4 0h3m1 0h5m1 0h2M0 25.5h1m1 0h3m1 0h1m1 0h1m4 0h1m1 0h1m2 0h1m1 0h2m1 0h3m2 0h1M0 26.5h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h1m3 0h3m3 0h1m2 0h1m1 0h1M0 27.5h1m5 0h1m3 0h2m7 0h2m4 0h1m1 0h1M0 28.5h7m1 0h3m1 0h2m2 0h1m1 0h4m1 0h1m1 0h1m1 0h1"/></svg>
+    <p class="card__scan">Scan</p>
+  </div>
+</div>
+</section>
+</body>
+</html>
