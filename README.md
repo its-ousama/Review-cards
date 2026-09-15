@@ -89,14 +89,44 @@ If a page ever looks half-built on your phone, that's this, and the fix is the
 
 ```bash
 npm install
-node scripts/make-cards.mjs https://your-domain.pages.dev sam 30
+node scripts/make-cards.mjs https://review.epita.online sam 32
 ```
 
-Opens as `out/cards-sam.html`. Print at **100% scale, no fit-to-page** — scaling shrinks the QR quiet zone and some scanners choke. Cardstock around 300gsm. Cut on the dashed lines.
+Opens as `out/cards-sam.html`. Print at **100% scale, no fit-to-page** — scaling
+shrinks the QR quiet zone and some scanners choke. Cardstock around 300gsm.
 
-Error correction is set to level M, so the code still reads with a fold or a beer ring across it.
+**Eight cards per A4, not ten.** The old sheet was 275mm of cards plus 22mm of
+margin on a 297mm page — exactly the height of the paper, with nothing left for
+the printer's own unprintable strip. Any printer with a bottom margin clipped
+row five. This one leaves 22.5mm top and bottom.
 
-The cards don't name a review site, which is why they didn't need reprinting when Tripadvisor was added.
+**Cut on the crop ticks**, the short marks in the paper margin. They point at
+each card boundary; line a ruler across two opposite ticks and cut. Nothing is
+printed on the card itself to cut along, because a dashed rectangle survives the
+scissors and tells everyone the card came off a home printer. The frame sits
+2.6mm inside the trim, so a millimetre of drift changes the white margin and
+never touches the design.
+
+Error correction is level Q — 25% recovery, against M's 15% — and the code is
+27mm instead of 22mm. Bigger modules and more parity: it reads through a fold,
+a beer ring, and a dim corner of the bar.
+
+**Check the type before you commit cardstock.** The card uses Libre Baskerville
+and Libre Caslon Display from Google Fonts. If the browser can't reach them it
+falls back to Times silently and the design collapses — so if the name looks
+like Times, reload with a connection before printing. Print one sheet on plain
+paper first and lay it over the cardstock to confirm the ticks all landed.
+
+### The card
+
+Black ink only: line art, hairlines and solid black, no greys, no tints, no
+flood fills. A cream panel across eight cards bands on a laser and spends toner
+on nothing. The paper is the background.
+
+The frog is an original drawing in `card.template.html`, not the pub's mark —
+which is deliberate. Don't swap in FrogPubs' own logo without asking German
+first; the card already carries the pub's name, and that's the part worth having
+permission for.
 
 ## 4. Check what's working
 
@@ -108,7 +138,11 @@ Returns, per day and per person: scans, tap-throughs, the split between Google a
 
 The number to watch is `clickThroughRate`. If scans are high and clicks are low, the page copy needs work. If scans themselves are low, the handover is the problem, not the page.
 
-`byPlatform` tells you where people actually want to write. If one site is barely used, make it the second option rather than dropping it — some customers only have an account on one.
+`byPlatform` tells you where people actually want to write. If one site is barely
+used, make it the second option rather than dropping it — some customers only have
+an account on one. Note the card now prints "Google or Tripadvisor", so adding a
+third site means a reprint; that was a deliberate trade for the customers who'd
+otherwise put the card down thinking "I don't do Google reviews".
 
 `stars` and `starsAverage` are the room's mood, not a filter. Nothing in the code reads them.
 

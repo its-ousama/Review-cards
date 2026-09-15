@@ -1,12 +1,36 @@
 <div class="card">
-  <div class="card__body">
-    <p class="card__role">Served you today</p>
-    <p class="card__name">{{NAME}}</p>
-    <p class="card__ask">A minute for a review?</p>
-    <p class="card__venue">The Frog &amp; British Library</p>
-  </div>
-  <div class="card__qr">
-    {{QR}}
-    <p class="card__scan">Scan</p>
-  </div>
+  <div class="card__frame"><div class="card__inner">
+
+    <svg class="frog" viewBox="0 0 100 86" fill="none" stroke="#000"
+         stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M9 74 C9 43 27 31 50 31 C73 31 91 43 91 74 Z" fill="#fff"/>
+      <circle cx="31" cy="22" r="14" fill="#fff"/>
+      <circle cx="69" cy="22" r="14" fill="#fff"/>
+      <ellipse cx="31" cy="23" rx="4.6" ry="6" fill="#000" stroke="none"/>
+      <ellipse cx="69" cy="23" rx="4.6" ry="6" fill="#000" stroke="none"/>
+      <path d="M27 57 Q50 70 73 57"/>
+      <circle cx="43" cy="46" r="2" fill="#000" stroke="none"/>
+      <circle cx="57" cy="46" r="2" fill="#000" stroke="none"/>
+      <path d="M6 74 q5 -8 11 -2 q5 -7 10 -1"/>
+      <path d="M94 74 q-5 -8 -11 -2 q-5 -7 -10 -1"/>
+    </svg>
+
+    <p class="venue"><i></i>THE FROG &amp; BRITISH LIBRARY<i></i></p>
+
+    <div class="body">
+      <div class="body__text">
+        <p class="lbl">Served you today</p>
+        <p class="name">{{NAME}}</p>
+        <p class="ask">A minute for a review?</p>
+        <p class="plat">Google or Tripadvisor</p>
+      </div>
+      <div class="body__qr">
+        {{QR}}
+        <p class="scan">SCAN</p>
+      </div>
+    </div>
+
+    <p class="url">{{DOMAIN}}</p>
+
+  </div></div>
 </div>
